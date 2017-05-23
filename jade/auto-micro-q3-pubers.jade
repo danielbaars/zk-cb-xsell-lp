@@ -1,0 +1,27 @@
+extends _auto-micro-q3
+
+prepend header
+	- var pageTitle = 'Centraal Beheer Schadeverzekering Inzittenden'
+	- var fileName = 'auto-micro-q3-pubers'
+	- var bodyClass = 'auto-micro-q3 ' + fileName
+	- var pageID = fileName
+	- var dataCre = 'autosvi'
+
+prepend content
+	- var payOff = 'Altijd gezellig zo\'n volle bak. Maar je moet er niet aan denken dat er iets gebeurt.'
+	- var widgetHeaderAlt = 'Verzeker al uw passagiers. <br>Dat rijdt een stuk prettiger.'
+	- var CTA = 'Check uw voordeel <br>bij Centraal Beheer'
+	- var introText = 'Kinderen naar school, sportclub en feestjes brengen. En weer ophalen. Zo’n lading tieners in de auto is best gezellig. Maar het rijdt een stuk prettiger als iedereen is meeverzekerd. Met de Autoverzekering met Schadeverzekering inzittenden van onze partner Centraal Beheer zijn uw passagiers in goede handen. Net zoals u dat bent bij Zilveren Kruis.'	
+	include _auto-micro-q3-variables
+	- var verzekeringCode = 'svi'
+	- var verzekeringNaam = sviNaam
+	- var usp1 = sviUSP1
+	- var usp2 = sviUSP2
+	- var usp3 = sviUSP3
+	- var uspFootnote = true
+	- var secondaryVisual = 'auto-micro-q3-pubers-main-visual-unmasked-1207x720px.jpg'
+	- var sloganText = 'Dezelfde zorg. <br>Ook voor iedereen die meerijdt.'
+
+append content
+	script.
+		var data_schadeverzekering_inzittenden = "true";

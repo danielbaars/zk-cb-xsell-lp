@@ -1,0 +1,26 @@
+extends _woon-micro-q2
+
+prepend header
+	- var pageTitle = 'Centraal Beheer Kostbaarheden Buitenshuisverzekering'
+	- var fileName = 'woon-micro-q2-pubers'
+	- var bodyClass = 'woon-micro-q2 ' + fileName
+	- var pageID = fileName
+	- var dataCre = 'wonen-mic-pu'
+
+prepend content
+	- var payOff = 'Ze is ook af en toe zo slordig met dat mobieltje.'
+	- var widgetHeaderAlt = 'Verzeker uw waardevolle spullen. <br>Ook die van uw kind.'
+	- var introText = 'Uw kostbaarste bezit? Uw kinderen natuurlijk! Maar waar kunt u terecht als de mobiele telefoon van uw kind stukgaat? Of de laptop gestolen wordt? Bij onze partner Centraal Beheer zijn uw waardevolle spullen goed verzekerd. Net zoals uw gezin dat is bij Zilveren Kruis.'	
+	include _woon-micro-q2-variables
+	- var verzekeringCode = 'kbh'
+	- var verzekeringNaam = kbhNaam
+	- var usp1 = kbhUSP1
+	- var usp2 = kbhUSP2
+	- var usp3 = kbhUSP3
+	- var uspFootnote = true
+	- var secondaryVisual = 'woon-micro-pubers-extra-visual.jpg'
+	- var sloganText = 'Dezelfde zorg. <br>Maar dan voor uw waardevolle spullen.'
+
+append content	
+	script.
+		var data_kostbaarheden = "true";

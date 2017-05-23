@@ -1,0 +1,19 @@
+extends default
+block header
+	- var formType = 'geen';
+	- var animatedHeader = 'no';	
+	- var pageTitle = 'XSell Single Product Template (Rechtsbijstandverzekering)';
+	- var bodyClass = 'spt rechtsbijstand';
+block content
+	include _header
+	.container
+		.row
+			.col-xs-12.col-md-8
+				.hero-carousel
+					img.carousel-img(src="img/zk-arts-rechter-visual-1268x571px.jpg")
+					h1.carousel-slogan Dezelfde zorg. Ook voor uw rechten.
+			.col-xs-12.col-sm-6.col-sm-push-6.col-md-4.col-md-push-0
+				.main-widget.main-widget--auto.main-widget--korting.sm-2nd				
+					h2.mw__header Even kennis maken met de Rechtsbijstandverzekering van Centraal Beheer
+					h3.mw__form-header Verzeker u van rechtsbijstand:
+					a.xsell-button.xsell-button--green-bg.lp-link(onclick="Link('#{rechtLink}','cross','zka','recht-widget-aug14','referrer','49545');return false;" href="#{rechtLink}" data-icon="a") Ontdek Centraal Beheer

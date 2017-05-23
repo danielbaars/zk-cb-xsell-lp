@@ -1,0 +1,69 @@
+mixin main-widget(widgetClassName, widgetFormName)
+	.widget.widget--house(class='#{widgetClassName}')
+		.widget__discount
+			.discount__text
+				.discount__1st #{discountPercentage}%
+				.discount__2nd korting		
+		h2.widget__header.widget__header--ov Woonverzekering
+		h2.widget__header.widget__header--alt !{widgetHeaderAlt}
+		h3.widget__form-header Vul uw adres in:
+		form.widget__form.widget__form--address.form-inline(action='#{woonLink}' method='GET' name='#{widgetFormName}')
+			input(type="hidden" name="stap" value="Stap-2")
+			.form__primary.form__address-inputs
+				.form-group.form__postal-code
+					label.form__label Postcode
+					input.form-control(name='pg_pstcd', placeholder='1111AA', type='text', maxlength='7' data-required='open' pattern='^(\\d)(\\d)(\\d)(\\d)(\\s?)([a-zA-Z])([a-zA-Z])$' title='Postcode heeft niet het juiste formaat.')
+				.form-group.form__housenumber
+					label.form__label Huisnr.
+					input.form-control(name='pg_hsnr', placeholder='4', type='text' data-required='open' pattern='^[0-9]+$' title='Huisnummer heeft niet het juiste formaat.')
+				.form-group.form__addition
+					label.form__label Toevoeging
+					input.form-control(name='pg_hsnrtv', placeholder='bis', type='text' pattern='^[a-zA-Z0-9]*$' title='Toevoeging heeft niet het juiste formaat.')
+			.form__secondary
+				.form-group.form__type
+					label.form__label Wat voor type woning heeft u?
+					select.form-control(name='pg_typwon', data-required='open')
+						option(value='') Kies het type woning
+						option(value='5') Tussenwoning
+						option(value='1') Flat/ Appartement/Etage/Maisonette
+						option(value='7') Vrijstaand/Bungalow/Herenhuis/Woonboerderij
+						option(value='6') Twee-onder-een-kap/Hoekwoning
+						option(value='3') Kamerbewoning
+						option(value='4') Recreatiewoning/Stacaravan
+						option(value='2') Grachtenpand
+						option(value='8') Woonboot
+						option(value='9') Geen van bovengenoemde
+					a.form__tip.form__tip--housetype(title='Staat uw woningtype niet in ons overzicht? Neem dan contact op met een van onze medewerkers via telefoonnummer (055) 579 8000. Wij helpen u dan bij het berekenen van de premie.') #[i.fa.fa-info-circle.form__tip-icon]
+				.form-group.form__rooms
+					label.form__label Hoeveel slaap en werkkamers heeft uw woning?
+					select.form-control(name='pg_aankam', data-required='open')
+						option(value='') Kies het aantal kamers
+						- var x = 1
+						while x <= 7
+							option(value='#{x}') #{x++}
+						option(value='#{x}') #{x} of meer
+					a.form__tip.form__tip--rooms(title='Voor het invullen van het aantal kamers tellen niet mee; woonkamer, badkamer, gang, keuken en garage. Wordt de zolder gebruikt als slaap/hobbyruimte moet u deze wel meerekenen. Heeft u een vliering of bergruimte dan telt dit niet als een kamer.') #[i.fa.fa-info-circle.form__tip-icon]
+				.form-group.form__roof
+					.form__label Wat voor dakbedekking heeft uw woning?
+					label.radio-inline
+						input(name='pg_riedak', type='radio', value='rietenDak', data-required='open')
+						| Rieten dak
+					label.radio-inline						
+						input(name='pg_riedak', type='radio', value='anders')
+						| Anders
+				.form-group.form__owner
+					.form__label Bent u eigenaar?
+					label.radio-inline
+						input(name='pg_huueig', type='radio', value='Ja', data-required='open')
+						| Ja
+					label.radio-inline
+						input(name='pg_huueig', type='radio', value='Nee')
+						| Nee
+				.form-group.form__birthday
+					label.form__label Wat is uw geboortedatum?
+					//-input.form-control(name='pg_gebdtm', placeholder='DD-MM-YYYY', type='date', data-required='open')
+					input.form-control(name='pg_gebdtm', placeholder='DD-MM-YYYY', type='text', pattern='(0?[1-9]|[12][0-9]|3[01])-(0?[1-9]|1[012])-((19|20)\\d\\d)', data-required='open')
+			.form__submit
+				button.widget__button(type='submit' href='#{woonLink}' data-icon="a") !{CTA}
+		.widget__footer
+			p Als klant van Zilveren Kruis krijgt u 8% premiekorting. Krijgt u via uw werkgever meer collectiviteitsvoordeel? #[a.widget__collectiviteitslink(href="#{collectiefLink}" data-cre='#{dataCre}-coll') Lees meer]

@@ -1,0 +1,42 @@
+.main-widget {
+	@media #{$desktop} {
+		padding-bottom: 15px;
+	}
+	.korting-badge {
+		display: none;
+	}
+}
+
+.hero-list-container {
+	.korting-badge {
+		left: 25px;
+		top: 44px;
+		bottom: auto;
+	}
+}
+
+.hero-list {
+	@media #{$desktop} {
+		max-width: 360px;
+		max-width: none;
+		font-size: 18px;
+		margin-left: 0;
+		margin-right: 0;
+		margin-top: 24px;
+		margin-bottom: 72px;
+		padding-left: 160px;
+		padding-top: 40px;
+		//padding-right: 45px;
+	}
+	li p {
+		@media #{$tablet} {
+			padding-left: 29px;
+		}
+		&:before {
+			@media #{$tablet} {
+				font-size: 20px;
+				margin-right: 10px;
+			}	
+		}
+	}
+}

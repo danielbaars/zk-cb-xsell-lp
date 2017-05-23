@@ -1,0 +1,139 @@
+@mixin column ($gutter: $grid-gutter-width) {
+	display: block;
+	position: relative;
+	float: left;
+	min-height: 1px;  
+	padding-left:  ($gutter / 2);
+	padding-right: ($gutter / 2);
+}
+
+// Generate the phone (= extra small) columns
+@mixin phone-col($columns, $gutter: $grid-gutter-width) {
+  @include column($gutter);
+  width: percentage(($columns / $grid-columns));
+}
+@mixin phone-col-offset($columns) {
+  margin-left: percentage(($columns / $grid-columns));
+}
+@mixin phone-col-push($columns) {
+  left: percentage(($columns / $grid-columns));
+}
+@mixin phone-col-pull($columns) {
+  right: percentage(($columns / $grid-columns));
+}
+
+// Generate the phablet columns
+@mixin phablet-col($columns, $gutter: $grid-gutter-width) {
+  @media (min-width: $screen-xs-min) {
+	@include column($gutter);
+    width: percentage(($columns / $grid-columns));
+  }
+}
+@mixin phablet-col-offset($columns) {
+  @media (min-width: $screen-xs-min) {
+    margin-left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin phablet-col-push($columns) {
+  @media (min-width: $screen-xs-min) {
+    left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin phablet-col-pull($columns) {
+  @media (min-width: $screen-xs-min) {
+    right: percentage(($columns / $grid-columns));
+  }
+}
+
+
+// Generate the small tablet columns
+@mixin tablet-small-col($columns, $gutter: $grid-gutter-width) {
+  @media (min-width: $tablet-small-min) {
+	@include column($gutter);
+    width: percentage(($columns / $grid-columns));
+  }
+}
+@mixin tablet-small-col-offset($columns) {
+  @media (min-width: $tablet-small-min) {
+    margin-left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin tablet-small-col-push($columns) {
+  @media (min-width: $tablet-small-min) {
+    left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin tablet-small-col-pull($columns) {
+  @media (min-width: $tablet-small-min) {
+    right: percentage(($columns / $grid-columns));
+  }
+}
+
+// Generate the tablet (= small) columns
+@mixin tablet-col($columns, $gutter: $grid-gutter-width) {
+  @media (min-width: $screen-sm-min) {
+    @include column($gutter);
+    width: percentage(($columns / $grid-columns));
+  }
+}
+@mixin tablet-col-offset($columns) {
+  @media (min-width: $screen-sm-min) {
+    margin-left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin tablet-col-push($columns) {
+  @media (min-width: $screen-sm-min) {
+    left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin tablet-col-pull($columns) {
+  @media (min-width: $screen-sm-min) {
+    right: percentage(($columns / $grid-columns));
+  }
+}
+
+// Generate the desktop (= medium) columns
+@mixin desktop-col($columns, $gutter: $grid-gutter-width) {
+  @media (min-width: $screen-md-min) {
+    @include column($gutter);
+    width: percentage(($columns / $grid-columns));
+  }
+}
+@mixin desktop-col-offset($columns) {
+  @media (min-width: $screen-md-min) {
+    margin-left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin desktop-col-push($columns) {
+  @media (min-width: $screen-md-min) {
+    left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin desktop-col-pull($columns) {
+  @media (min-width: $screen-md-min) {
+    right: percentage(($columns / $grid-columns));
+  }
+}
+
+// Generate the wide desktop (= large) columns
+@mixin desktop-wide-col($columns, $gutter: $grid-gutter-width) {
+  @media (min-width: $screen-lg-min) {
+    @include column($gutter);
+    width: percentage(($columns / $grid-columns));
+  }
+}
+@mixin desktop-wide-col-offset($columns) {
+  @media (min-width: $screen-lg-min) {
+    margin-left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin desktop-wide-col-push($columns) {
+  @media (min-width: $screen-lg-min) {
+    left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin desktop-wide-col-pull($columns) {
+  @media (min-width: $screen-lg-min) {
+    right: percentage(($columns / $grid-columns));
+  }
+}

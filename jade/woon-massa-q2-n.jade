@@ -1,0 +1,169 @@
+include _woon-widget
+
+extends default
+block header
+    - var animatedHeader = false
+    - var pageTitle = 'Centraal Beheer Woonverzekering'
+    - var bodyClass = 'woon-massa-q2-n woon-massa-q2-n--r1'
+    - var woonFormV3 = true
+    - var getParamsDisabled = true
+    - var modernizr = true
+    - var dataCre = 'wonenf'
+    - var synovite = true
+    - var synoviteCode = 'wonenb'
+    - var ssmDisabled = true
+    - var CTA = 'Bereken uw premie'
+    - var dataPla = 'zka'
+    - var dataPro = 'cross'
+    - var dataType = 'referrer'
+    - var dataWerkgevernr = '49545'
+    - var dataCid = dataPro
+block content
+    - var widgetHeaderAlt = 'Direct uw premie berekenen?'
+    - var phoneNumber = '055 – 579 8307'
+    .body-wrap
+        .body-container
+            include _header-v2
+            .outer-hero
+                .container
+                    .pblock__discount
+                        .discount__text
+                            .discount__1st 8%
+                            .discount__2nd korting
+                    .clearfix
+                    .row
+                        .col-lg-12
+                            h1.hero-title-2 Stel zelf uw woonverzekering samen
+                    .clearfix
+                    .row
+                        .hero-widgets
+                            .col-sm-6.col-md-4
+                                +main-widget('main-widget main-widget--woon main-widget--korting pop-out-widget woonform--desktop hidden-xs-ts', 'woonFormulier')
+                                    .clearfix
+                        .col-sm-6.col-md-8
+                            .hero-list-container.hidden-xs-ls
+                                .korting-badge.imgc: img(src="img/xsell-korting-badge-oranje-v2-200x222px.png")
+                                ul.hero-list
+                                    li: p #[span U bepaalt zelf eenvoudig wat u wilt verzekeren]
+                                    li: p #[span U krijgt voor lange tijd de nieuwwaarde vergoed]
+                                    li: p #[span De Schadeservice is altijd telefonisch bereikbaar]
+                        //-.col-sm-2
+                            .small-container
+                                .badge.badge-orange.big-badge
+                                    h2 8%
+                                    h3 korting
+                                    h4 via Zilveren Kruis
+            .mobile-hero-widgets
+                .col-lg-6
+                    .hero-list-container
+                        ul.hero-list
+                            li: p #[span U bepaalt zelf eenvoudig wat u wilt verzekeren]
+                            li: p #[span U krijgt voor lange tijd de nieuwwaarde vergoed]
+                            li: p #[span De Schadeservice is altijd telefonisch bereikbaar]
+                .col-lg-4
+                    +main-widget('main-widget main-widget--woon main-widget--korting pop-out-widget hidden-sm-lg', 'woonFormulierMobile')
+                        .clearfix
+            .information-block
+                .container
+                    .row
+                        .col-md-8
+                            h1.information-title Bij Centraal Beheer is meer verzekerd dan u denkt
+                            h2.information-title-2 U kiest zelf wat u verzekert. Zo betaalt u nooit teveel. #[br]Kies bijvoorbeeld uit deze dekkingen:
+                    .row
+                        .col-md-8.blocks
+                            .row
+                                .col-xs-12.col-sm-6.col-md-6
+                                    .dekking.dekking--inboedel
+                                        .pblock__discount
+                                            .discount__text
+                                                .discount__1st 8%
+                                                .discount__2nd korting
+                                        h3.pblock__name Inboedelverzekering
+                                        br
+                                        .pblock__info
+                                            p.hidden-ts-lg Hiermee bent u verzekerd tegen schade aan de spullen in uw huis, garage en schuur tot €&nbsp;100.000,-.
+                                            p.hidden-xs-ls Hiermee bent u verzekerd tegen schade aan uw spullen tot €&nbsp;100.000,-. Denk aan uw bank, uw televisie of waardevolle verzameling in huis. En aan uw fiets en gereedschap in de schuur.
+                                .col-xs-12.col-sm-6.col-md-6
+                                    //-.dekking.dekking--opstal.sm-4th
+                                        .pblock__discount
+                                            .discount__text
+                                                .discount__1st 8%
+                                                .discount__2nd korting
+                                        h3.pblock__name Opstalverzekering
+                                        .pblock__info
+                                            p.hidden-ts-lg Schade​ ​aan uw woning, schuur#[br.break320] en garage ​is hiermee verzekerd ​tot een herbouwwaarde van €&nbsp;350.000,-.
+                                            p.hidden-xs-ls Kiest u voor de Opstalverzekering, dan bent u verzekerd tegen schade aan uw woning, schuur en garage tot een herbouwwaarde van €&nbsp;350.000,-. Bijvoorbeeld bij schade door brand, bliksem, inbraak, storm of neerslag.
+                                    .dekking.dekking--all-risks
+                                        .pblock__discount
+                                            .discount__text
+                                                .discount__1st 8%
+                                                .discount__2nd korting
+                                        h3.pblock__name All Risks #[br]Woonverzekering
+                                        .pblock__info
+                                            p.hidden-ts-lg Deze verzekering vergoedt schade aan uw huis en inboedel die door uzelf of andere gezinsleden wordt veroorzaakt.
+                                            p.hidden-xs-ls Deze verzekering vergoedt verzekerde schade aan uw huis en inboedel die wordt veroorzaakt door uzelf of andere gezinsleden. Hiermee is dus eigen-schuld schade vaak verzekerd.                                     
+                                .col-xs-12.col-sm-6.col-md-6
+                                    .dekking.dekking--kostbaarheden
+                                        .pblock__discount
+                                            .discount__text
+                                                .discount__1st 8%
+                                                .discount__2nd korting
+                                        h3.pblock__name Kostbaarheden<br>Buitenshuisverzekering
+                                        .pblock__info
+                                            p.hidden-ts-lg V​erzeker alle ​​kostbare spullen ​(nieuwwaarde ​tenminste €&nbsp;200,-​)​​ ​die u meeneemt naar buiten tegen schade en diefstal.
+                                            p.hidden-xs-ls Verzeker alle kostbare spullen die u meeneemt naar buiten. Uw sieraden, smartphone en andere spullen met een nieuwwaarde van tenminste €&nbsp;200,- zijn verzekerd tegen schade en diefstal.
+                                .col-xs-12.col-sm-6.col-md-6
+                                    //-.dekking.dekking--pechhulp.sm-4th
+                                        .pblock__discount
+                                            .discount__text
+                                                .discount__1st 8%
+                                                .discount__2nd korting
+                                        h3.pblock__name Pechhulp wonen
+                                        .pblock__info
+                                            p.hidden-ts-lg Acute pech in of om uw huis? #[br.break320]Met Pechhulp Wonen belt u gewoon ‘Even Apeldoorn’​ voor een vakman die d​e pech verhelpt.
+                                            p.hidden-xs-ls Houdt de cv-ketel er zo maar mee op of heeft u zich per ongeluk buitengesloten? Met Pechhulp  Wonen belt u gewoon ‘Even Apeldoorn’. Centraal Beheer stuurt een vakman die de acute pech in en om uw huis verhelpt.
+                                    .dekking.dekking--aansprakelijkheid
+                                        .pblock__discount
+                                            .discount__text
+                                                .discount__1st 8%
+                                                .discount__2nd korting
+                                        h3.pblock__name Aansprakelijkheids- #[br]verzekering
+                                        .pblock__info
+                                            p.hidden-ts-lg Verzeker uzelf tegen schade aan anderen. Het gaat om schade die u bij andere personen veroorzaakt.
+                                            p.hidden-xs-ls Verzeker uzelf tegen schade die u bij andere personen veroorzaakt. Bijvoorbeeld als u de spullen van iemand anders beschadigt. Of als iemand gewond raakt.
+                            .clearfix
+                            .dekkingen-button-container
+                                form.spw__form.spw__form--button.woonform(action="#{woonLink}" id="house-insurance-form" method="GET" name="woonFormulier" data-cre="#{dataCre}")
+                                    .input-button-container
+                                        input.input--green.hidden-ts-lg(type="submit" value="Zelf samenstellen" alt="Zelf samenstellen")
+                                        input.input--green.hidden-xs-ls(type="submit" value="Zelf uw woonverzekering samenstellen" alt="Zelf uw woonverzekering samenstellen")
+                            //-.button-container
+                                .xsell-button.xsell-button--white-bg.lp-link.hidden-xs-ls(data-icon="a" href="https://www.centraalbeheer.nl/formulieren/contact/Paginas/bel-mij-later.aspx") Zelf uw woonverzekering samenstellen
+                                .clearfix
+                                .xsell-button.xsell-button--white-bg.lp-link.hidden-ts-lg(data-icon="a" href="https://www.centraalbeheer.nl/formulieren/contact/Paginas/bel-mij-later.aspx") Zelf samenstellen
+                            br
+                        .col-md-4
+                            .contact-container
+                                .contact-block.sm-2nd
+                                    h2.contact__header Even Apeldoorn bellen
+                                    .contact__intro
+                                        p Heeft u vragen over de Woonverzekering? Centraal Beheer staat u graag te woord!
+                                    .cb-phone--large.blue-phone #{phoneNumber}
+                                        a.phone-info-icon(href="#") m
+                                    p.contact__button-note Of laat u terugbellen:
+                                    a.xsell-button.xsell-button--green-bg.lp-link(href="#{terugbelLink}" title="Bel me terug" data-icon="a") Bel me terug
+                                    br
+                                    p.contact__button-note.contact__button-note--email Of stel uw vraag via e-mail
+                                    a.xsell-button.xsell-button--green-bg.lp-link(href="#{emailLink}" title="E-mail" data-icon="a") E-mail
+                        .clearfix
+            .links-section
+                a(href="#{wijzerLink}") Wijzer in geldzaken
+                a(href="#{productInformatieLink}") Productinformatie &amp; Polisvoorwaarden              
+            include _footer
+            script.
+                var data_cre = "#{dataCre}";
+                var data_pla = "#{dataPla}";
+                var data_type = "#{dataType}";
+                var data_werkgevernr = "#{dataWerkgevernr}";
+                var data_wgid = "#{dataWerkgevernr}";
+                var data_cid = "#{dataCid}";

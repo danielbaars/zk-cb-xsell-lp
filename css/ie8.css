@@ -1,0 +1,11 @@
+.spw__form .form-group--postcode input {
+  width: 90px; }
+.spw__form .form-group--huisnummer input,
+.spw__form .form-group--toevoeging input {
+  width: 60px; }
+.spw__form .form-group--postcode input,
+.spw__form .form-group--huisnummer input {
+  margin-right: 6px; }
+
+.dekking--3 .pblock__info {
+  font-size: 9px; }

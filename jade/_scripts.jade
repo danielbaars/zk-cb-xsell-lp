@@ -1,0 +1,44 @@
+if animatedHeader == 'yes'
+	script(type="text/javascript" src="animaties/kpw-copy.js")
+	script.
+		var strKpwCta = "Bereken uw premie";
+		var arrKwpItems = [window.obj0,window.obj1,window.obj2];
+		var boolKpwShowMenu = false;
+		var numKpwTiming = 2;		
+script(type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
+if modernizr
+	script(src="//cdnjs.cloudflare.com/ajax/libs/yepnope/1.5.4/yepnope.min.js")
+	script(src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js")
+if bootstrapCollapse
+	script(src="js/bootstrap-collapse.min.js")
+if matchHeight
+	script(src="js/jquery.matchHeight-min.js")
+unless toolTipsterDisabled
+	script(src="js/jquery.tooltipster.js")
+unless ssmDisabled
+	script(src="js/ssm.min.js")
+	script(src="js/ssm-config.js")
+unless getParamsDisabled
+	script(src="js/getparams.js")
+if pageID == 'laatste-bod'
+	script(src="js/laatste-bod.js")
+if animatedHeader
+	script(src="animaties/kpw-header.js")
+script(src="js/neo.js")
+if woonFormV3
+	script(src="js/micro.js")
+	script(src="js/woon-v3.js")
+if autoQ3
+	script(src="js/auto.js")
+if parameters
+	script(src="js/parameters.js")
+else
+	script(src="js/main.js")
+	if woonFormV2
+		script(src="js/woon-v2.js")
+	else
+		script(src="js/woon.js")
+	script.
+		jQuery(document).ready(function() {
+			jQuery('.main-widget[data-widget="woonWidget"]').customWoonWidget();
+		});

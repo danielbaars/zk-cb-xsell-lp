@@ -1,0 +1,76 @@
+.outer-hero {
+	background-image: url(../img/woon-micro-pensionados-main-visual.jpg);
+	background-position: calc(50% - 64px) -18px;
+	@media #{$tablet} {
+		background-position: calc(50% + 97px) -18px;
+	}
+	@media #{$desktop} {
+		background-position: center center;
+	}
+}
+
+.payoff {
+	color: white;
+	text-shadow: none;
+	@media #{$tablet} {
+		margin-top: 16px;
+		font-size: 44px;
+	}
+	@media #{$desktop} {
+		margin-top: 28px;
+		width: 306px;
+		font-size: 51px;
+		letter-spacing: -0.6px;
+	}
+}
+
+.widget {
+	@media #{$tablet} {
+		margin-top: -115px;
+	}
+	@media #{$desktop} {
+		margin-top: -327px;
+	}
+	&__header--alt {
+		font-size: 17px;
+	}
+}
+
+.info {
+	&__visual {
+		@media #{$desktop} {
+			width: 203px;
+		}
+	}
+}
+
+.contact {
+	@media #{$desktop} {
+		height: 314px;
+	}
+	&__footer {
+		@media #{$desktop} {
+			position: absolute;
+			bottom: 20px;
+		}
+	}
+}
+
+.slogan {
+	@media #{$tablet} {
+		font-size: 25px;
+	}
+	@media #{$desktop} {
+		font-size: 32px;
+	}
+}
+
+.woonverzekering {
+	&__intro {
+		br {
+			@media #{$desktop} {
+				display: block;
+			}
+		}
+	}
+}

@@ -1,0 +1,25 @@
+.spw__form {
+	.form-group--postcode {
+		input {
+			width: 90px;
+		}
+	}
+	.form-group--huisnummer,
+	.form-group--toevoeging {
+		input {
+			width: 60px;
+		}
+	}
+	.form-group--postcode,
+	.form-group--huisnummer {
+		input {
+			margin-right: 6px;
+		}
+	}
+}
+
+.dekking--3 {
+	.pblock__info {
+		font-size: 9px;
+	}
+}

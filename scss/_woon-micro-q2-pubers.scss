@@ -1,0 +1,42 @@
+.outer-hero {
+	background-image: url(../img/woon-micro-pubers-main-visual-v2.jpg);
+}
+
+.widget {
+	@media #{$tablet} {
+		margin-top: -116px;
+	}
+	@media #{$desktop} {
+		margin-top: -327px;
+	}
+}
+
+.info {
+	&__visual {
+		@media #{$desktop} {
+			width: 203px;
+		}
+	}
+}
+
+.contact {
+	@media #{$desktop} {
+		height: 314px;
+	}
+	&__footer {
+		@media #{$desktop} {
+			position: absolute;
+			bottom: 20px;
+		}
+	}
+}
+
+.woonverzekering {
+	&__intro {
+		br {
+			@media #{$desktop} {
+				display: block;
+			}
+		}
+	}
+}

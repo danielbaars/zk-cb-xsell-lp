@@ -1,0 +1,147 @@
+extends default
+block header
+	- var parameters = true
+	- var ssmDisabled = true
+	- var getParamsDisabled = true
+	- var toolTipsterDisabled = true
+	- var modernizr = false
+	- var targetBlank = true
+	- var dataPla = 'zka'
+	- var dataPro = 'cross'
+	- var dataType = 'referrer'
+	- var dataWerkgevernr = '49545'
+	- var dataCid = dataPro
+	- var pageTitle = 'Centraal Beheer Overlijdensrisicoverzekering'
+	- var fileName = 'orv-micro-q1-kinderen'
+	- var bodyClass = 'orv-micro-q1 ' + fileName
+	- var pageID = fileName
+	- var dataCre = 'orv'
+	- var synovite = true
+	- var synoviteCode = dataCre	
+block content
+	- var phoneNumber = '055 – 579 8100'
+	- var payOff = 'Ik wil het goed geregeld hebben voor mijn gezin. Ook als ik er niet meer ben.'
+	- var widgetHeaderAlt = 'Verzeker al uw passagiers. <br>Dat rijdt een stuk prettiger.'
+	- var CTA = 'Check uw voordeel <br>bij Centraal Beheer'
+	- var introText = 'Wat gebeurt er met uw gezin als u overlijdt? Blijft het huis betaalbaar? Is er geld voor de studie van uw kinderen? Natuurlijk denkt u hier liever niet over na. Maar u wilt het wel goed geregeld hebben. Dit doet u heel eenvoudig bij onze partner Centraal Beheer. Daar is uw gezin in goede handen. Net zoals u dat nu bent bij Zilveren Kruis.'	
+	- var orvNaam = 'Overlijdens&shy;risico&shy;verzekering'
+	- var orvUSP1 = 'Uw <span>gezin bepaalt zelf</span> waar ze het verzekerde bedrag aan besteden'
+	- var orvUSP2 = '98% van de aanvragen wordt <span>medisch goedgekeurd</span>'
+	- var orvUSP3 = '<span>Dagelijks</span> op te zeggen'
+	- var verzekeringCode = 'orv'
+	- var verzekeringNaam = orvNaam
+	- var usp1 = orvUSP1
+	- var usp2 = orvUSP2
+	- var usp3 = orvUSP3
+	- var secondaryVisual = 'orv-micro-q1-kinderen-extra-visual-448x400px-q30.jpg'
+	- var sloganText = 'Regel het goed voor uw gezin.'	
+	.page-wrapper
+		include _header-v2
+		.outer-hero
+			.container
+				.row
+					.col-xs-12
+						.hero
+							.row
+								.col-sm-9.col-md-8
+									h1.payoff.hidden-xs-ts &ldquo;!{payOff}&rdquo;
+								.col-sm-3.col-md-4
+									//-.korting-badge.imgc: img(src="img/xsell-korting-octagon-violet.png")
+		.outer-payoff--mobile.hidden-sm-lg
+			.container
+				.row
+					.col-xs-12
+						h1.payoff--mobile &ldquo;!{payOff}&rdquo;
+		.outer-intro
+			.container
+				.row
+					.col-xs-12.col-sm-8.col-sm-offset-2
+						.intro #{introText}
+					.col-xs-12.col-sm-5.col-md-4
+						//-+main-widget('', 'autoFormulier')
+		.outer-info
+			.container
+				.row
+					.col-xs-12.col-ts-6.col-sm-7.col-md-8
+						.info
+							h2.info__header Voordelen van de #[span !{verzekeringNaam}]
+							.info__visual-usp-container
+								.info__visual.imgc.hidden-xs-sm
+									//-img(src='img/#{secondaryVisual}')
+								.info__text
+									ul.info__usp-list
+										li #[i.zki.zki-checkmark] !{usp1}
+										li #[i.zki.zki-checkmark] !{usp2}
+										li #[i.zki.zki-checkmark] !{usp3}
+									a.info__cta.xsell-button.xsell-button--white-bg(href="#{orvLink}" data-icon="a" data-cre='#{dataCre}') Meer informatie
+					.col-xs-12.col-ts-6.col-sm-5.col-md-4
+						.contact
+							h2.contact__header Even Apeldoorn bellen
+							p.contact__intro Centraal Beheer biedt u uitgebreide informatie over de verschillende vormen van uitkering. Zij helpen u graag. Als u wilt, bellen ze u terug op een moment dat het u uitkomt.
+							a.contact__phonebutton.xsell-button.xsell-button--green-bg(title="Telefoonnummer" data-icon="a" href="tel:#{phoneNumber}") #{phoneNumber}
+							.contact__phonenumber #{phoneNumber}
+							.contact__footer
+								//-.contact__email
+									#[i.fa.fa-envelope-o] #[a(href="#{emailLink}" data-cre='#{dataCre}-email') Stel uw vraag via e-mail]
+								.contact__callback
+									#[i.fa.fa-phone] #[a(href="#{terugbelLink}" data-cre='#{dataCre}-terugbellen') Centraal Beheer belt u terug]
+			.outer-slogan
+				.container
+					.row
+						.col-xs-12
+							.slogan !{sloganText}
+			.outer-verzekering-intro
+				.container
+					.row
+						.col-xs-12.col-sm-8.col-sm-offset-2
+							p.verzekering-intro Bij overlijden keert Centraal Beheer in één keer het door u verzekerde bedrag uit. Dit geldt zolang de verzekering loopt. Met dit bedrag kan het wegvallen van een inkomen opgevangen worden.
+			.container
+				.row
+					.col-xs-12.col-ts-6
+						.verzekering.verzekering--1
+							h2.verzekering__header Het verzekerde bedrag
+							.verzekering__text
+								p.verzekering__intro Voor het afsluiten van de Overlijdens&shy;risico&shy;verzekering wilt u weten welk bedrag u moet verzekeren. Dit is voor veel mensen een lastige vraag. Want de financiële situatie is voor iedereen anders. 
+								p.verzekering__intro Met de handige rekentool van Centraal Beheer berekent u het verzekerde bedrag makkelijk in een paar stappen. De uitkomst geeft u een idee welk bedrag u kunt verzekeren.
+							a.verzekering__cta.xsell-button.xsell-button--white-bg(href="https://www.centraalbeheer.nl/verzekeringen/overlijdensrisicoverzekering/Paginas/welk-bedrag-verzekeren.aspx" data-icon="a" data-cre='#{dataCre}') Meer informatie
+					.col-xs-12.col-ts-6
+						.verzekering.verzekering--2
+							h2.verzekering__header De verschillende vormen van uitkering
+							.verzekering__text
+								p.verzekering__intro Bij het afsluiten van de Overlijdens&shy;risico&shy;verzekering kunt u kiezen uit 3 vormen van uitkering. U kiest de vorm die het beste past bij uw persoonlijke situatie. 
+								p.verzekering__intro Met de handige rekentool van Centraal Beheer berekent u het verzekerd bedrag makkelijk in een paar stappen. De uitkomst geeft u een idee welk bedrag u kunt verzekeren. 
+								ul.verzekering__list
+									li Gelijkblijvend: een vast verzekerd bedrag
+									li Gelijkmatig dalend bedrag: lineair dalend
+									li Een annuïtair dalend bedrag
+							a.verzekering__cta.xsell-button.xsell-button--white-bg(href="https://www.centraalbeheer.nl/verzekeringen/overlijdensrisicoverzekering/Paginas/welke-vorm-kiest-u.aspx" data-icon="a" data-cre='#{dataCre}') Meer informatie
+					.col-xs-12.col-ts-6
+						.verzekering.verzekering--3
+							h2.verzekering__header Medische acceptatie en de gezondheids&shy;verklaring
+							.verzekering__text
+								p.verzekering__intro Na ontvangst van de getekende offerte beoordeelt Centraal Beheer de gezondheid van de verzekerde. Hiervoor moet de verzekerde online een gezondheids&shy;verklaring invullen.  
+								p.verzekering__intro Na het invullen van de gezondheids&shy;verklaring ontvangt u een bevestiging of u bent geaccepteerd.  Of dat wij u nog om aanvullende informatie vragen. 98% van de offerte&shy;aanvragen wordt door Centraal Beheer medisch goedgekeurd.
+							a.verzekering__cta.xsell-button.xsell-button--white-bg(href="https://www.centraalbeheer.nl/verzekeringen/overlijdensrisicoverzekering/Paginas/medisch-%20%20%20%20beoordelen.aspx" data-icon="a" data-cre='#{dataCre}') Meer informatie
+					.col-xs-12.col-ts-6
+						.verzekering.verzekering--4
+							h2.verzekering__header Is oversluiten voordelig?
+							.verzekering__text
+								p.verzekering__intro Heeft u een Overlijdens&shy;risico&shy;verzekering? Dan kunt u goedkoper uit zijn als u nu oversluit. De premies zijn de laatste jaren sterk gedaald. Dit komt onder meer doordat we steeds langer blijven leven. Wilt u berekenen of oversluiten voordeliger is voor u? Bel dan met Centraal Beheer op #[a.nw(title="Telefoonnummer" href="tel:#{phoneNumber}") #{phoneNumber}]
+							a.verzekering__cta.xsell-button.xsell-button--white-bg(href="https://www.centraalbeheer.nl/verzekeringen/overlijdensrisicoverzekering/Paginas/oversluiten-overlijdensrisicoverzekering.aspx" data-icon="a" data-cre='#{dataCre}') Meer informatie
+		.outer-links
+			.container
+				.row
+					.col-xs-12
+						.links
+							ul
+								li: a(href="#{wijzerLink}" data-cre='#{dataCre}') Wijzer in geldzaken
+								li: a(href="#{productInformatieLinkAuto}" data-cre='#{dataCre}') Productinformatie &amp; Polisvoorwaarden
+		include _footer-v2						
+	script.
+		var data_cre = "#{dataCre}";
+		var data_pla = "#{dataPla}";
+		var data_type = "#{dataType}";
+		var data_werkgevernr = "#{dataWerkgevernr}";
+		var data_wgid = "#{dataWerkgevernr}";
+		var data_cid = "#{dataCid}";
+		//var data_schadeverzekering_inzittenden = "true";				

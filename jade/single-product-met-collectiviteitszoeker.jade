@@ -1,0 +1,127 @@
+extends default
+block header
+	- var formType = 'auto';
+	- var animatedHeader = 'no';	
+	- var pageTitle = 'XSell Single Product Template';
+	- var bodyClass = 'spt';
+block content
+	include _header
+	.container
+		.row
+			.col-xs-12.col-md-8
+				.hero-carousel
+					img.carousel-img(src="img/zk-arts-monteur-visual-1268x571px.jpg")
+					h1.carousel-slogan Dezelfde zorg. Ook voor uw auto.
+			.col-xs-12.col-sm-6.col-sm-push-6.col-md-4.col-md-push-0
+				.main-widget-container
+					.main-widget.main-widget--auto.main-widget--korting.main-widget--expanded.sm-2nd
+						//-include _form--auto--coll1
+						//-include _form--auto--coll2
+						include _form--auto--coll1--xp
+			.col-xs-12.col-sm-6.col-sm-pull-6.col-md-4.col-md-pull-0
+					.text-block.tblock--intro.sm-2nd.md-2nd
+						h3.tblock__header Onze samenwerking. 
+							br
+							| Uw voordeel.
+						.tblock__text
+							p Als klant van Zilveren Kruis bent u vertrouwd met onze goede zorg. Bij onze partner Centraal Beheer kunt u bij een Autoverzekering rekenen op dezelfde kwaliteit en dezelfde service.
+							p.more-link
+								a.lp-link(onclick="Link('#{multiLPLink}','cross','zka','xsell-info-aug14','referrer','49545');return false;" href="#{multiLPLink}" data-icon="a") Ontdek alle verzekeringen
+			.clearfix.visible-sm-block
+			.col-xs-12.col-sm-6.col-md-4
+				.text-block.tblock--actie.sm-3rd.md-2nd
+					h3.tblock__header De autoverzekering van Centraal Beheer
+					.tblock__text
+						ul
+							li Bij total loss wordt de eerste 3 jaar de aanschafprijs vergoed
+							li Uw accessoires zijn onbeperkt meeverzekerd
+							li Uitstekende schadeservice van Centraal Beheer
+					.tblock--usp__img
+						img(src="img/red-car-794x327px.jpg" alt="Rode auto")
+			.col-xs-12.col-sm-6.col-md-4
+				.text-block.tblock--stel-samen.sm-3rd.md-2nd
+					h3.tblock__header Stel zelf uw verzekering samen
+					.tblock__text
+						p Zorg voor een lage premie. Door zelf te bepalen waarvoor u zich wilt verzekeren. Kies uit de verschillende dekkingen en bepaal zelf de hoogte van uw eigen risico. U betaalt dus nooit voor iets dat u niet nodig heeft.
+						form.spw__form.spw__form--button.autoform(method="GET" action="#{autoLink}")
+							.input-button-container
+								input.input--green(type="submit" value="Bereken uw premie")									
+	.container
+		.row
+			.col-xs-12
+				.row-header
+					h3 Stel zelf uw Autoverzekering samen. 
+						br
+						| Door bijvoorbeeld uit deze dekkingen te kiezen:
+			.col-xs-12
+				.main-products-container.main-products-container--sp
+					.row
+						.col-xs-12.col-sm-6.col-md-4				
+							.dekking.dekking--1.sm-4th
+								h3.pblock__name Pechhulp Nederland
+								.pblock__info
+									p Gerust op weg met Pechhulp Nederland. Daarmee bent u dag en nacht verzekerd van directe hulp bij autopech. Zelfs in uw eigen woonplaats. Eerst probeert de Alarmcentrale uw auto ter plekke te maken. En als dat niet lukt, krijgt u tijdelijk een andere auto.
+						.col-xs-12.col-sm-6.col-md-4			
+							.dekking.dekking--2.sm-5th.md-3rd
+								h3.pblock__name Hulpverlening Buitenland
+								.pblock__info
+									p Gerust naar het buitenland met de auto. Omdat u in heel Europa verzekerd bent van directe hulp bij autopech. Dag en nacht. Eerst probeert de Alarmcentrale uw auto ter plekke te maken. En als dat niet lukt, regelen ze een andere auto voor u of een hotel.
+						.col-xs-12.hidden-sm.col-md-4			
+							.dekking.dekking--3.sm-5th.md-3rd
+								h3.pblock__name Schadeverzekering Inzittenden
+								.pblock__info
+									p Gerust met passagiers op weg. Dankzij de Schadeverzekering Inzittenden van Centraal Beheer. Dus mocht u een ongeval krijgen, dan is iedereen die met u meerijdt automatisch verzekerd. Ongeacht wie schuldig was aan het ongeval.
+						.col-xs-12.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
+							.dekkingen-button-container
+								form.spw__form.spw__form--button.autoform(method="GET" action="#{autoLink}")
+									.input-button-container
+										input.input--green(type="submit" value="Verzekering samenstellen")			
+	.container
+		.row
+			.hidden-xs-ls.col-ts-12
+				.row-header
+					h3 Laat u overtuigen door de klanten van Centraal&nbsp;Beheer&nbsp;Achmea:
+	section.secondary-info					
+		.container
+			.row
+				.hidden-xs-ls.col-ts-12.col-sm-6.col-md-4
+					.text-block.tblock--testimonial.sm-6th.md-4th
+						h3.tblock__header Dit zegt de klant
+						.kiyoh__naam Erik Vertegaal
+							span.plaats , Laren
+						.kiyoh__aanbeveling Aanbeveling: 
+							span.antwoord ja
+						.kiyoh__beoordeling Beoordeling: 
+							span.cijfer 10
+						.kiyoh__pluspunten__hd Pluspunten
+						.kiyoh__pluspunten__txt Snel, soepel, doen niet moeilijk, prettige medewerkers.
+						.testimonial__bron
+							a(href="#{kiyohLink}" target="_blank") Bron: Kiyoh
+				.hidden-xs-ls.col-ts-12.col-sm-6.col-md-4
+					.text-block.tblock--independer.sm-6th.md-4th
+						h3.tblock__header Independer: een 
+							span.independer__cijfer 7,8 
+							| voor Centraal Beheer
+						.tblock__text
+							p Bijna 1000 klanten hebben Centraal Beheer voor u beoordeeld op Independer. Ze hebben allemaal in ieder geval onze autoverzekering. Wie weten het nou beter dan onze klanten?
+						.tblock--independer__img
+							img(src="img/independer-logo-523x121px.png" alt="Independer logo")
+				.col-xs-12.hidden-sm.col-md-4
+						.text-block.tblock--contact.md-4th
+							h3.tblock__header Even Apeldoorn bellen
+							a.xsell-button.xsell-button--white-bg.xsell-button--phonenumber(title="E-mail" data-icon="a" href="tel:055-5799054") 055 - 579 8000
+							p.cb-phone--large 055 - 579 8000
+							.tblock--contact--terugbellen
+								h4.tblock__subheader Laat u terugbellen!
+								a.xsell-button.xsell-button--white-bg.lp-link(onclick="Link('#{terugbelLink}','cross','zka','mp-lp-bel','referrer','49545');return false;" href="#{terugbelLink}" title="Bel me terug" data-icon="a") Bel me terug
+							h4.tblock__subheader Of stel uw vraag via e-mail							
+							a.xsell-button.xsell-button--white-bg.lp-link(onclick="Link('#{emailLink}','cross','zka','mp-lp-email','referrer','49545');return false;" href="#{emailLink}" title="E-mail" data-icon="a") E-mail
+	.container
+		.row
+			.hidden-xs-ls.col-ts-12
+				include _opzeghulp-block							
+	.container
+		.row
+			.hidden-xs-ls.col-ts-12
+				include _nuttig-block
+	include _footer

@@ -1,0 +1,48 @@
+.main-widget.main-widget--light
+	h2.mw__header.mw__header--phone
+		a(href="#productList" data-toggle="collapse") Bekijk alle verzekeringen
+		i.fa.fa-caret-down
+	#productList.collapse
+		ul.mw--multi__product-list.mw--multi__product-list--phone
+			li
+				span.main-widget__naam
+					mixin autoOnClick('Autoverzekering')
+				span.main-widget__korting
+					mixin autoOnClick('Lees meer') 
+					i.fa.fa-angle-double-right
+			li
+				span.main-widget__naam
+					mixin woonOnClick('Woonverzekering')
+				span.main-widget__korting
+					mixin woonOnClick('Lees meer')
+					i.fa.fa-angle-double-right
+			li
+				span.main-widget__naam
+					mixin rechtOnClick('Rechtsbijstandverzekering')
+				span.main-widget__korting
+					mixin rechtOnClick('Lees meer')
+					i.fa.fa-angle-double-right
+			li
+				span.main-widget__naam
+					mixin bootOnClick('Bootverzekering')
+				span.main-widget__korting
+					mixin bootOnClick('Lees meer')
+					i.fa.fa-angle-double-right
+			li
+				span.main-widget__naam
+					mixin caravanOnClick('Caravanverzekering')
+				span.main-widget__korting
+					mixin caravanOnClick('Lees meer') 
+					i.fa.fa-angle-double-right
+			li
+				span.main-widget__naam
+					mixin camperOnClick('Camperverzekering')
+				span.main-widget__korting
+					mixin camperOnClick('Lees meer')
+					i.fa.fa-angle-double-right
+			li
+				span.main-widget__naam
+					mixin motorOnClick('Motorverzekering')
+				span.main-widget__korting
+					mixin motorOnClick('Lees meer')
+					i.fa.fa-angle-double-right

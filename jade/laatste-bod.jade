@@ -1,0 +1,152 @@
+extends default
+block header
+	- var formType = 'auto';
+	- var animatedHeader = 'no';	
+	- var pageTitle = '150115 XSell Laatste Bod LP';
+	- var bodyClass = 'spt laatste-bod';
+	- var pageID = 'laatste-bod';
+block content
+	include _header
+	.container
+		.row
+			.col-xs-12.col-md-8
+				.hero-carousel
+					img.carousel-img(src="img/father-and-son-washing-car-1088x571px.jpg")
+					h1.carousel-slogan.carousel-slogan--laatste-bod Dezelfde zorg. Ook voor uw auto.#[br]#[span.subheader Bel nu voor #[span Het Laatste Bod]]
+			.col-xs-12.col-sm-6.col-sm-push-6.col-md-4.col-md-push-0
+				.main-widget.main-widget--auto.main-widget--korting.main-widget--collectiviteitszoeker.sm-2nd
+					.pblock__discount
+						.discount__text
+							.discount__1st 8%
+							.discount__2nd korting				
+					h2.mw__header Autoverzekering
+					//-h3.mw__form-header Direct uw premie berekenen?
+					include _form--auto
+					.widget-footnote.bottom
+						.employer-unknown
+							h4 Hogere korting via uw werkgever?
+							p.footer-text
+								| Uw korting als klant van Zilveren Kruis is 8%. Check hieronder of u recht heeft op meer collectiviteitskorting.
+						.employer-known
+							h4 Korting via uw werkgever
+							p.footer-text
+								| Uw korting via 
+								span.employer-name
+								|  is 
+								span.discount-percentage
+								| %. 
+								a.b-wijzig(href='#') Wijzig
+						.input-employers
+							input.default.employers.form-control.ui-autocomplete-input(type='text', placeholder='Zoek uw werkgever of vereniging', autocomplete='off')
+							span.tooltip_employers.tooltipstered(data-tooltip='')
+								img(src='//campaign.zilverenkruis.nl/xs/assets/skin-2014/img/document-info-webservice.png')					
+					//-.widget-footnote
+						p Als klant van Zilveren Kruis krijgt u 8%&nbsp;premiekorting. Krijgt u via uw werkgever meer collectiviteitsvoordeel? 
+							mixin collectiefOnClick('Lees meer')
+			.col-xs-12.col-sm-6.col-sm-pull-6.col-md-4.col-md-pull-0
+					.text-block.tblock--intro.tblock--intro--laatste-bod
+						h3.tblock__header Een persoonlijk aanbod van Centraal Beheer
+						.tblock__text
+							p U heeft al een goede autoverzekering gevonden? Bel dan eerst de experts van Centraal Beheer voor Het Laatste Bod. U weet dan precies waar u aan toe bent en betaalt niet teveel.
+			//-.clearfix.visible-sm-block
+			.col-xs-12.col-sm-6.col-md-4
+				.text-block.tblock--actie.tblock--actie--laatste-bod
+					h3.tblock__header Meer verzekering #[br]dan u denkt
+					.tblock__text
+						p Profiteer van de ruime dekking van de autoverzekering van #[span.nw Centraal Beheer]:
+						ul.tblock__text__list
+							li De eerste 3 jaar de aanschafwaarde vergoed; ook bij tweedehands auto’s.
+							li Al uw accessoires zijn onbeperkt meeverzekerd.
+							li Minimaal 8% korting voor u als klant van Zilveren Kruis.
+			.col-xs-12.col-sm-6.col-md-4
+				.text-block.tblock--contact.tblock--contact--laatste-bod
+					.contact-photo
+					.contact-text
+						h3.tblock__header Bel nu voor #[br]#[span Het Laatste Bod]
+						a.xsell-button.xsell-button--white-bg.xsell-button--phonenumber(title="E-mail" data-icon="a" href="tel:0555798000") 055 - 579 8000
+						p.cb-phone--large 055 - 579 8000
+						.tblock--contact--terugbellen
+							//-#callback-form
+								h4.tblock__subheader Of laat u terugbellen:
+								input#phoneNumber.callback-inputField.form-control(type='text', name='phoneNumber', maxlength='11', placeholder='Uw telefoonnummer')
+								input#lnksend.button.xsell-button.xsell-button--white-bg.lp-link(type='submit', name='lnksend', value='Bel mij', disabled='disabled')
+							//-.terugbellen__bedankt(style="display: none;")
+								h3.terugbellen__bedankt__header #[.vinkje] Bedankt!
+								p.terugbellen__bedankt__text Wij bellen u zo spoedig mogelijk.									
+							#nowinteract_callback
+								iframe(src="http://zilverenkruis.welikemilk.nl/xsell-campagneplatform/callback-form.html" scrolling="no" frameborder="no" style="background: transparent; height: 114px; width: 197px; " allowtransparency="true")
+	.container
+		.row
+			.col-xs-12
+				.row-header
+					h3 Stel zelf uw Autoverzekering samen. 
+						br
+						| Door bijvoorbeeld uit deze dekkingen te kiezen:
+			.col-xs-12
+				.main-products-container.main-products-container--sp
+					.row
+						.col-xs-12.col-sm-6.col-md-4				
+							.dekking.dekking--1.sm-4th
+								h3.pblock__name Pechhulp Nederland
+								.pblock__info
+									p Gerust op weg met Pechhulp Nederland. Daarmee bent u dag en nacht verzekerd van directe hulp bij autopech. Zelfs in uw eigen woonplaats. Eerst probeert de Alarmcentrale uw auto ter plekke te maken. En als dat niet lukt, krijgt u tijdelijk een andere auto.
+						.col-xs-12.col-sm-6.col-md-4			
+							.dekking.dekking--2.sm-5th.md-3rd
+								h3.pblock__name Hulpverlening Buitenland
+								.pblock__info
+									p Gerust naar het buitenland met de auto. Omdat u in heel Europa verzekerd bent van directe hulp bij autopech. Dag en nacht. Eerst probeert de Alarmcentrale uw auto ter plekke te maken. En als dat niet lukt, regelen ze een andere auto voor u of een hotel.
+						.col-xs-12.hidden-sm.col-md-4			
+							.dekking.dekking--3.sm-5th.md-3rd
+								h3.pblock__name Schadeverzekering Inzittenden
+								.pblock__info
+									p Gerust met passagiers op weg. Dankzij de Schadeverzekering Inzittenden van Centraal Beheer. Dus mocht u een ongeval krijgen, dan is iedereen die met u meerijdt automatisch verzekerd. Ongeacht wie schuldig was aan het ongeval.
+						.col-xs-12.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
+							.dekkingen-button-container
+								form.spw__form.spw__form--button.autoform(method="GET" action="#{autoLink}")
+									.input-button-container
+										input.input--green(type="submit" value="Verzekering samenstellen")			
+	.container
+		.row
+			.hidden-xs-ls.col-ts-12
+				.row-header
+					h3 Laat u overtuigen door de klanten van Centraal&nbsp;Beheer&nbsp;Achmea:
+	section.secondary-info					
+		.container
+			.row
+				.hidden-xs-ls.col-ts-12.col-sm-6.col-md-4
+					.text-block.tblock--samenwerking.sm-6th.md-4th
+						h3.tblock__header Onze samenwerking. 
+							br
+							| Uw voordeel.
+						.tblock__text
+							p Als klant van Zilveren Kruis bent u vertrouwd met onze goede zorg. Bij onze partner Centraal Beheer kunt u bij een Autoverzekering rekenen op dezelfde kwaliteit en dezelfde service.
+							p.more-link
+								a.lp-link(onclick="Link('#{multiLPLink}','cross','zka','xsell-info-aug14','referrer','49545');return false;" href="#{multiLPLink}" data-icon="a") Ontdek alle verzekeringen					
+				.hidden-xs-ls.col-ts-12.col-sm-6.col-md-4
+					.text-block.tblock--testimonial.sm-6th.md-4th
+						h3.tblock__header Dit zegt de klant
+						.kiyoh__naam Erik Vertegaal
+							span.plaats , Laren
+						.kiyoh__aanbeveling Aanbeveling: 
+							span.antwoord ja
+						.kiyoh__beoordeling Beoordeling: 
+							span.cijfer 10
+						.kiyoh__pluspunten__hd Pluspunten
+						.kiyoh__pluspunten__txt Snel, soepel, doen niet moeilijk, prettige medewerkers.
+						.testimonial__bron
+							a(href="#{kiyohLink}" target="_blank") Bron: Kiyoh					
+				.col-xs-12.hidden-sm.col-md-4
+					.text-block.tblock--klantwaardering.sm-6th.md-4th
+						h3.tblock__header Uitstekende schadeservice
+						.tblock__header-number 8,6
+						.tblock__text
+							p Centraal Beheer meet doorlopend de waardering bij klanten over de schadeafwikkeling. Dat de klanten zeer tevreden zijn, blijkt wel uit het cijfer dat zij geven. Hun klanten waarderen de schadeafdeling van Centraal Beheer met een 8,6 (juni 2014).
+	.container
+		.row
+			.hidden-xs-ls.col-ts-12
+				include _opzeghulp-block-v2							
+	.container
+		.row
+			.hidden-xs-ls.col-ts-12
+				include _nuttig-block
+	include _footer

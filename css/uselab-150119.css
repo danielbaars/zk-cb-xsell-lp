@@ -1,0 +1,9 @@
+.carousel-slogan {
+	&, &:before, &:after {
+    background-color: white;
+	}
+}
+
+.carousel-slogan--laatste-bod {
+    color: #0068bd;
+}

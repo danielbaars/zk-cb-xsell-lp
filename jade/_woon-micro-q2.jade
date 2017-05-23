@@ -1,0 +1,134 @@
+mixin kbh-variables
+	- var kbhNaam = 'Kostbaarheden Buitens&shy;huis&shy;verzekering'
+	- var kbhUSP1 = 'Uw spullen verzekerd tegen <span>schade, verlies en diefstal.</span>'
+	- var kbhUSP2 = '<span>Ook in het buitenland</span> zijn uw spullen verzekerd.'
+	- var kbhUSP3 = 'U heeft <span>geen eigen risico</span>'	
+
+include _woon-widget
+
+extends default
+block header
+	- var woonFormV3 = true
+	- var synovite = true
+	- var synoviteCode = dataCre
+	- var ssmDisabled = true
+	- var getParamsDisabled = true
+	- var modernizr = true
+	- var dataPla = 'zka'
+	- var dataPro = 'cross'
+	- var dataType = 'referrer'
+	- var dataWerkgevernr = '49545'
+	- var dataCid = dataPro
+block content
+	- var discountPercentage = 8
+	- var CTA = 'Check uw klantvoordeel <br>bij Centraal Beheer'
+	- var phoneNumber = '055 - 579 83 07'
+	.page-wrapper
+		include _header-v2
+		.outer-hero
+			.container
+				.row
+					.col-xs-12
+						.hero
+							.row
+								.col-sm-9.col-md-8
+									h1.payoff.hidden-xs-ts &ldquo;!{payOff}&rdquo;
+								.col-sm-3.col-md-4
+									.korting-badge.imgc: img(src="img/xsell-korting-octagon-violet.png")
+		.outer-payoff--mobile.hidden-sm-lg
+			.container
+				.row
+					.col-xs-12
+						h1.payoff--mobile &ldquo;!{payOff}&rdquo;
+		.outer-intro
+			.container
+				.row
+					.col-xs-12.col-sm-7.col-md-8.col-md-push-2
+						.intro #{introText}
+					.col-xs-12.col-sm-5.col-md-4
+						+main-widget('', 'woonFormulier')
+		.outer-info
+			.container
+				.row
+					.col-xs-12.col-ts-6.col-sm-7.col-md-8
+						.info
+							h2.info__header Voordelen van de !{verzekeringNaam.replace(/&shy;/g, '')}
+							.info__visual-usp-container
+								.info__visual.imgc.hidden-xs-sm
+									img(src='img/#{secondaryVisual}')
+								.info__text
+									ul.info__usp-list
+										li #[i.zki.zki-checkmark] !{usp1}
+										li #[i.zki.zki-checkmark] !{usp2}
+										li #[i.zki.zki-checkmark] !{usp3}
+										if uspFootnote
+											p.info__footnote Het gaat om waardevolle spullen met een nieuwwaarde van ten minste € 200,-.
+									a.info__cta.xsell-button.xsell-button--white-bg(href="#{woonLink}" data-icon="a" data-cre='#{dataCre}') Bereken uw premie
+					.col-xs-12.col-ts-6.col-sm-5.col-md-4
+						.contact
+							h2.contact__header Even Apeldoorn bellen
+							p.contact__intro Bij Centraal Beheer leggen ze u graag uit hoe deze verzekering werkt. En als u wilt, bellen ze u terug op een moment dat het u uitkomt.
+							a.contact__phonebutton.xsell-button.xsell-button--green-bg(title="E-mail" data-icon="a" href="tel:#{phoneNumber}") #{phoneNumber}
+							.contact__phonenumber #{phoneNumber}
+							.contact__footer
+								//-.contact__email
+									#[i.fa.fa-envelope-o] #[a(href="#{emailLink}" data-cre='#{dataCre}-email') Stel uw vraag via e-mail]
+								.contact__callback
+									#[i.fa.fa-phone] #[a(href="#{terugbelLink}" data-cre='#{dataCre}-terugbellen') Centraal Beheer belt u terug]
+			.outer-slogan
+				.container
+					.row
+						.col-xs-12
+							.slogan !{sloganText}
+			.container
+				.row
+					.col-xs-12
+						.woonverzekering
+							h2.woonverzekering__header Kies zelf wat u wilt verzekeren
+							.woonverzekering__text
+								p.woonverzekering__intro De !{verzekeringNaam} is onderdeel van de Woonverzekering van Centraal Beheer. #[br]U kunt de !{verzekeringNaam} ook los afsluiten. Stel zelf uw verzekering samen. Zo betaalt u niet te veel.
+								.columnbreak
+								ul.woonverzekering__list
+									if verzekeringCode == 'kbh'
+										li #[span Kostbaarheden Buitens&shy;huis&shy;verzekering] - uw waarde&shy;volle spullen vanaf €&nbsp;200,- buiten uw huis verzekerd.
+										li #[span All Risks Woonverzekering] - voor uw inboedel en opstal, vergoedt ook als u zelf de schade veroorzaakt.
+										li #[span Inboedelverzekering] - voor de spullen in uw huis.
+										li #[span Opstalverzekering] - uw koopwoning verzekeren.
+										li.dontsplit #[span Glasverzekering] - voor het glas in uw huis.
+										li #[span Aansprakelijkheids&shy;verzekering] - schade die u bij andere personen veroorzaakt.
+										li #[span Tuinverzekering] - voor de spullen in uw tuin.										
+									if verzekeringCode == 'arw'
+										li #[span All Risks Woonverzekering] - voor uw inboedel en opstal, vergoedt ook als u zelf de schade veroorzaakt.
+										li #[span Inboedelverzekering] - voor de spullen in uw huis.
+										li #[span Opstalverzekering] - uw koopwoning verzekeren.
+										li #[span Glasverzekering] - voor het glas in uw huis.
+										li.dontsplit #[span Kostbaarheden Buitens&shy;huis&shy;verzekering] - uw waarde&shy;volle spullen vanaf €&nbsp;200,- buiten uw huis verzekerd.
+										li #[span Aansprakelijkheids&shy;verzekering] - schade die u bij andere personen veroorzaakt.										
+										li #[span Tuinverzekering] - voor de spullen in uw tuin.
+									if verzekeringCode == 'svi'
+										li #[span Kostbaarheden Buitens&shy;huis&shy;verzekering] - uw waarde&shy;volle spullen vanaf €&nbsp;200,- buiten uw huis verzekerd.
+										li #[span All Risks Woonverzekering] - voor uw inboedel en opstal, vergoedt ook als u zelf de schade veroorzaakt.
+										li #[span Inboedelverzekering] - voor de spullen in uw huis.
+										li #[span Opstalverzekering] - uw koopwoning verzekeren.
+										li.dontsplit #[span Glasverzekering] - voor het glas in uw huis.
+										li #[span Aansprakelijkheids&shy;verzekering] - schade die u bij andere personen veroorzaakt.
+										li #[span Tuinverzekering] - voor de spullen in uw tuin.										
+							.row
+								.col-xs-12.col-sm-8.col-sm-offset-4
+									a.woonverzekering__cta.xsell-button.xsell-button--white-bg(href="#{woonLink}" data-icon="a" data-cre='#{dataCre}') Zelf samenstellen
+		.outer-links
+			.container
+				.row
+					.col-xs-12
+						.links
+							ul
+								li: a(href="#{wijzerLink}" data-cre='#{dataCre}') Wijzer in geldzaken
+								li: a(href="#{productInformatieLink}" data-cre='#{dataCre}') Productinformatie &amp; Polisvoorwaarden
+		include _footer-v2						
+	script.
+		var data_cre = "#{dataCre}";
+		var data_pla = "#{dataPla}";
+		var data_type = "#{dataType}";
+		var data_werkgevernr = "#{dataWerkgevernr}";
+		var data_wgid = "#{dataWerkgevernr}";
+		var data_cid = "#{dataCid}";

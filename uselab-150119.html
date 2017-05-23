@@ -1,0 +1,30 @@
+<div class="text-block tblock--contact tblock--contact--laatste-bod">
+    <div class="contact-photo"></div>
+    <div class="contact-text">
+        <h3 class="tblock__header">Bel nu voor <br><span>Het Laatste Bod</span></h3><a title="E-mail" data-icon="a" href="tel:0555798307" class="xsell-button xsell-button--white-bg xsell-button--phonenumber">055 - 579 8307</a>
+        <p class="cb-phone--large">055 - 579 8307</p>
+        <div class="tblock--contact--terugbellen">
+            <div id="nowinteract_callback"></div>
+        </div>
+    </div>
+<script>
+$(function() {
+    var content = $('.tblock--contact--laatste-bod').clone();
+    var holder = $('.tblock--contact--laatste-bod').parent().parent();
+    if (holder.find('a[title="bewerk blok(ken)"]').size() == 0) {
+        holder.empty().append(content);
+    }
+});
+$('head').append('<style>.tblock__header span{font-weight:600;}</style>');
+</script>    
+</div>
+
+<img src="/assets/skin-2014/img/zk-arts-monteur-visual-1088x571px.jpg" class="carousel-img">
+<h1 class="carousel-slogan carousel-slogan--laatste-bod">Dezelfde zorg. Ook voor uw auto.<br><span class="subheader">Bel nu voor <span>Het Laatste Bod</span></span></h1>
+<script>
+$(function(){
+$('body').addClass('laatste-bod');
+});
+$('head').append('<style>.carousel-slogan--laatste-bod,.carousel-slogan:before,.carousel-slogan:after{background-color: white;}.carousel-slogan--laatste-bod{color:#0068bd;}</style>');
+</script>
+

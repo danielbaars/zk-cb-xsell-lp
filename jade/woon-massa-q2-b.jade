@@ -1,0 +1,145 @@
+include _woon-widget
+
+extends default
+block header
+	- var animatedHeader = false
+	- var pageTitle = 'Centraal Beheer Woonverzekering'
+	- var bodyClass = 'woon-massa-q2-b'
+	- var pageID = 'woon-massa-q2-b'
+	- var woonFormV3 = true
+	- var getParamsDisabled = true
+	- var modernizr = true
+	- var dataCre = 'wonenbt'
+	- var synovite = true
+	- var synoviteCode = 'wonena'
+	- var ssmDisabled = true
+	- var dataPla = 'zka'
+	- var dataPro = 'cross'
+	- var dataType = 'referrer'
+	- var dataWerkgevernr = '49545'
+	- var dataCid = dataPro
+block content
+	- var payOff = 'Stel zelf uw <br>woonverzekering samen'
+	- var CTA = 'Bereken uw premie'
+	- var widgetHeaderAlt = 'Direct uw premie berekenen?'
+	- var phoneNumber = '055 - 579 8307'	
+	include _header-v2
+	.container
+		style.
+			@media (min-width: 992px) {
+				@-moz-document url-prefix() {
+					.dekking--1,
+					.dekking--2,
+					.dekking--3 {
+						height: 263px !important;
+					}
+				}
+			}
+		.row
+			.col-xs-12.col-sm-6.col-md-4
+				+main-widget('main-widget bottom-footer woonform--desktop hidden-xs-sm', 'woonFormulier')
+			.col-xs-12.col-md-8
+				.hero-carousel.hero--woon-q2-b
+					.pblock__discount.hidden-ts-lg
+						.discount__text
+							.discount__1st 8%
+							.discount__2nd korting
+					.korting-badge.imgc.hidden-xs-ls: img(src="img/xsell-korting-badge-oranje-v2-200x222px.png")
+					img.carousel-img.hidden-xs-ls(src="img/ThinkstockPhotos-Panorama-Construction-94295729-EXTRA-LUCHT-1088x571px-q50.jpg")
+					img.carousel-img.hidden-ts-lg(src="img/ThinkstockPhotos-Panorama-Construction-94295729-EXTRA-LUCHT-1232x556px-q50.jpg")
+					h1.payoff !{payOff}
+				.payoff--mobile !{payOff}
+			.col-xs-12.col-sm-6.col-md-4.hidden-md-lg
+				+main-widget('main-widget main-widget--woon main-widget--korting pop-out-widget hidden-md-lg', 'woonFormulierMobile')
+			.col-xs-12.col-sm-6.col-md-4
+				.text-block.tblock--korting
+					h3.tblock__header Aantrekkelijke korting #[br]bij Centraal Beheer
+					.tblock__text
+						p Als klant van Zilveren Kruis krijgt u korting bij onze partner Centraal Beheer. Zo krijgt u #[strong 8% korting] op de Woonverzekering. Profiteer nu!
+						a.xsell-button.xsell-button--light(href="#{woonLink}" title="Bekijk alle kortingen" data-icon="a") Bekijk alle verzekeringen
+			//-.clearfix.visible-sm-block
+			.col-xs-12.col-sm-6.col-md-4
+				.text-block.tblock--usp
+					h3.tblock__header Uw huis en inboedel #[br]goed verzekerd
+					.tblock__text
+						ul.tblock__text__list
+							li U bepaalt zelf eenvoudig wat u wilt verzekeren
+							li U krijgt voor lange tijd de nieuwwaarde vergoed
+							li De Schadeservice is altijd telefonisch bereikbaar
+							form.spw__form.spw__form--adres.fbutton.form-inline.woonform(method="GET" action="#{woonLink}" name="woonFormulier")
+								.input-button-container
+									input.fbtn--green(type="submit" value="#{CTA}" alt="#{CTA}")
+			.col-xs-12.col-sm-6.col-md-4
+				.text-block.tblock--contact
+					h3.tblock__header Vragen? Even #[br]Apeldoorn bellen!
+					p Heeft u vragen over de Woonverzekering? Centraal Beheer staat u graag te woord!
+					a.xsell-button.xsell-button--light.xsell-button--phonenumber(title="E-mail" data-icon="a" href="tel:#{phoneNumber}") #{phoneNumber}
+					p.cb-phone--large #{phoneNumber}
+					.tblock--contact--terugbellen-email-container
+						.tblock--contact--terugbellen
+							h4.tblock__subheader Laat u terugbellen!
+							a.xsell-button.xsell-button--light.lp-link(href="#{terugbelLink}" title="Bel me terug" data-icon="a") Bel me terug
+						//-.tblock--contact--email
+							h4.tblock__subheader Of stel uw vraag via e-mail
+							a.xsell-button.xsell-button--white-bg.lp-link(href="#{emailLink}" title="E-mail" data-icon="a") E-mail
+			.col-xs-12
+				.main-products-container.main-products-container--sp
+					.row-header
+						h3 Bij Centraal Beheer is meer verzekerd dan u denkt
+						p U kiest zelf wat u verzekert. Zo betaalt u nooit teveel. Kies bijvoorbeeld uit deze dekkingen:
+					.row
+						.col-xs-12.col-sm-6.col-md-4
+							.dekking.dekking--1
+								.pblock__discount
+									.discount__text
+										.discount__1st 8%
+										.discount__2nd korting
+								h3.pblock__name Inboedelverzekering#[br.hidden-xs-ts]&nbsp;
+								.pblock__info
+									p Hiermee bent u verzekerd tegen schade aan uw spullen tot €&nbsp;100.000,-. Denk aan uw bank, uw televisie of waardevolle verzameling in huis. En aan uw fiets en gereedschap in de schuur.
+						.col-xs-12.col-sm-6.col-md-4
+							.dekking.dekking--2
+								.pblock__discount
+									.discount__text
+										.discount__1st 8%
+										.discount__2nd korting
+								h3.pblock__name.hidden-xs.hidden-sm.hidden-md.hidden-lg Aansprakelijkheidsverzekering
+								h3.pblock__name.hidden-ls.hidden-ts All Risks #[br]Woonverzekering
+								.pblock__info
+									p Deze verzekering vergoedt verzekerde schade aan uw huis en inboedel die wordt veroorzaakt door uzelf of andere gezinsleden. Hiermee is dus eigen-schuld schade vaak verzekerd.
+									br.hidden-xs-ls.hidden-ts
+						.col-xs-12.hidden-sm.col-md-4
+							.dekking.dekking--3
+								.pblock__discount
+									.discount__text
+										.discount__1st 8%
+										.discount__2nd korting
+								h3.pblock__name Kostbaarheden Buitenshuisverzekering
+								.pblock__info
+									p Verzeker alle kostbare spullen die u meeneemt naar buiten. Uw smartphone, sieraden en andere spullen met een nieuwwaarde van tenminste €&nbsp;200,- zijn verzekerd tegen schade en diefstal. In de hele wereld.
+						.col-xs-12.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
+							.dekkingen-button-container
+								form.spw__form.spw__form--button.woonform(method="GET" action="#{woonLink}")
+									.input-button-container
+										input.input--green(type="submit" value="Zelf samenstellen" alt="Zelf samenstellen")
+	.container
+		.row
+			.hidden-xs-ls.col-ts-12
+				include _opzeghulp-block-v2
+	.container
+		.row
+			.hidden-xs-ls.col-ts-12
+				.nuttige-links
+					p
+						//-a.zka-tooltip(data-placement="top" data-toggle="tooltip" href="#{wijzerLink}" title="" data-original-title="Betrouwbare en objectieve informatie over geldzaken" data-speedtrap="{'CRE': '#{dataCre}'}") Wijzer in geldzaken
+						a.zka-tooltip(href="#{wijzerLink}") Wijzer in geldzaken
+						&nbsp;&nbsp;&nbsp;
+						a(href="#{productInformatieLink}") Productinformatie &amp; Polisvoorwaarden
+	include _footer
+	script.
+		var data_cre = "#{dataCre}";
+		var data_pla = "#{dataPla}";
+		var data_type = "#{dataType}";
+		var data_werkgevernr = "#{dataWerkgevernr}";
+		var data_wgid = "#{dataWerkgevernr}";
+		var data_cid = "#{dataCid}";

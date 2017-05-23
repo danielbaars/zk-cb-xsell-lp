@@ -1,1 +1,2 @@
-# zk-cb-xsell-lp
+# Zilveren Kruis / Centraal Beheer cross-sell landingpages
+Landingpages for Dutch insurance companies Zilveren Kruis & Centraal Beheer. Built using Jade & SCSS (via CodeKit). Customised grid is based on Bootstrap 3.

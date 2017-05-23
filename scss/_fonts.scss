@@ -1,0 +1,23 @@
+@font-face {
+    font-family:"zk-icons-font";
+    src:url("../fonts/zk-icons-font.eot");
+    src:url("../fonts/zk-icons-font.eot?#iefix") format("embedded-opentype"),url("../fonts/zk-icons-font.ttf") format("truetype"),url("../fonts/zk-icons-font.svg#zk-icons-font") format("svg"),url("../fonts/zk-icons-font.woff") format("woff");
+    font-weight:normal;
+    font-style:normal;
+}
+
+/* ! FONTS */
+
+$font-family-sans-serif:  "PT Sans", Arial, sans-serif !default;
+$font-family-headers: "Titillium Web", Arial, sans-serif !default;
+$font-size-base: 16px;
+
+/* ! FONT WEIGHTS */
+
+$thin: 100;
+$light: 300;
+$regular: 400;
+$semi-bold: 600;
+$bold: 700;
+$extra-bold: 800;
+$black: 900;

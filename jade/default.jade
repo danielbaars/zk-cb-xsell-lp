@@ -1,0 +1,64 @@
+include _variables
+include _mixins
+doctype html
+html(lang="nl")
+	block header
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		//-meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+		meta(name="robots" content="noindex, nofollow")
+		meta(name="description" content="")
+		meta(name="author" content="")
+		link(rel="shortcut icon" href="img/favicon.ico")
+		title #{pageTitle}
+		if targetBlank
+			base(target="_blank")
+		if synovite
+			<!-- Start Synovite code -->
+			script.
+				var _stq = _stq || [];
+				_stq.push(['setSiteId', 136]);
+				_stq.push(['setPageStructure', 'campaign', 'xs', '#{synoviteCode}']);
+				_stq.push(['loadTags']);
+				var _stVersion = '9-achmea';
+				(function(v){var s=document.createElement('script');s.async=true;
+				s.type='text/javascript'; s.src=('https:'==document.location.protocol ?
+				'https://ssl' : 'http://www') + '.synovite-scripts.com/ca-'+v+'.js';
+				document.getElementsByTagName('head')[0].appendChild(s);})(_stVersion);
+			<!-- End Synovite code -->
+		link(href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet")
+		link(rel="stylesheet" href="css/app.css")
+		link(href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Titillium+Web:300,400,600,600italic' rel='stylesheet' type='text/css')
+		if presetJS
+			script(type="text/javascript" src="js/preset.js")
+		<!--[if lt IE 9]>
+		script(src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js")
+		script(src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js")
+		link(rel="stylesheet" href="css/ie8.css")
+		<![endif]-->
+		<!--[if IE 9]>
+		//-script(src="js/css3-multi-column.min.js")
+		link(rel="stylesheet" href="css/ie9.css")
+		<![endif]-->		
+	if formType == "auto-woon"
+		body(class='#{bodyClass}' onload="populate('autoFormulier'); populate('woonFormulier');")
+			block content
+			include _scripts
+	else if formType == "auto"
+		body(class='#{bodyClass}' onload="populate('autoFormulier');")
+			block content
+			include _scripts
+	else if formType == "woon"
+		body(class='#{bodyClass}' onload="populate('woonFormulier');")
+			block content
+			include _scripts
+	else if formType == "woon-dubbel"
+		body(class='#{bodyClass}' onload="populate('woonFormulierDesktop-a'); populate('woonFormulierDesktop-b'); populate('woonFormulierMobile-a'); populate('woonFormulierMobile-b');")
+			block content
+			include _scripts
+	else
+		body(class='#{bodyClass}')
+			block content
+			include _scripts

@@ -1,0 +1,29 @@
+mixin row(rowName)
+	div(class='outer--#{rowName}')
+		.container
+			.row
+				block
+				
+mixin autoOnClick(linkTitle)
+	a.lp-link(onclick="Link('#{autoLPLink}','cross','zka','mp-lp-info-auto','referrer','49545');return false;" href="#{autoLPLink}") #{linkTitle}
+	
+mixin woonOnClick(linkTitle)
+	a.lp-link(onclick="Link('#{woonLPLink}','cross','zka','mp-lp-info-woon','referrer','49545');return false;" href="#{woonLPLink}") #{linkTitle}
+	
+mixin rechtOnClick(linkTitle)
+	a.lp-link(onclick="Link('#{rechtLPLink}','cross','zka','mp-lp-info-rbv','referrer','49545');return false;" href="#{rechtLPLink}") #{linkTitle}
+	
+mixin bootOnClick(linkTitle)
+	a.lp-link(onclick="Link('#{bootLPLink}','cross','zka','mp-lp-info-boot','referrer','49545');return false;" href="#{bootLPLink}") #{linkTitle}
+	
+mixin caravanOnClick(linkTitle)
+	a.lp-link(onclick="Link('#{caravanLPLink}','cross','zka','mp-lp-info-caravan','referrer','49545');return false;" href="#{caravanLPLink}") #{linkTitle}	
+
+mixin camperOnClick(linkTitle)
+	a.lp-link(onclick="Link('#{camperLPLink}','cross','zka','mp-lp-info-camper','referrer','49545');return false;" href="#{camperLPLink}") #{linkTitle}
+	
+mixin motorOnClick(linkTitle)
+	a.lp-link(onclick="Link('#{motorLPLink}','cross','zka','mp-lp-info-motor','referrer','49545');return false;" href="#{motorLPLink}") #{linkTitle}
+	
+mixin collectiefOnClick(linkTitle)
+	a.lp-link(onclick="Link('#{collectiefLink}','cross','zka','lp-collectiviteit','referrer','49545');return false;" href="#{collectiefLink}") #{linkTitle}

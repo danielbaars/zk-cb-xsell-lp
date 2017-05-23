@@ -1,0 +1,83 @@
+.outer-hero {
+	background-image: url(../img/woon-micro-kinderen-main-visual.jpg);
+	background-size: auto 160px;
+	background-position: calc(50% - 3px) -10px;
+	@media #{$iphone6plus} {
+		height: 245px;
+		background-size: auto 254px;
+	}
+	@media #{$tablet-small} {
+		height: 316px;
+		background-size: auto 324px;
+	}
+	@media #{$tablet} {
+		height: 348px;
+		background-size: auto 368px;
+		background-position: calc(50% + 66px) -21px;
+	}
+	@media #{$desktop} {
+		height: 466px;
+		background-size: cover;
+		background-position: center center;		
+	}	
+}
+
+.payoff {
+	@media #{$tablet} {
+		width: 318px;
+		font-size: 47px;
+	}
+	@media #{$desktop} {
+		width: 358px;
+		font-size: 55px;
+	}
+}
+
+.payoff--mobile {
+	@media #{$tablet-small} {
+		font-size: 38px;
+	}
+}
+
+.widget {
+	@media #{$tablet} {
+		margin-top: -116px;
+	}
+	@media #{$desktop} {
+		margin-top: -327px;
+	}
+}
+
+.info {
+	&__visual {
+		@media #{$desktop} {
+			width: 195px;
+		}
+	}
+	&__usp-list {
+		@media #{$desktop} {
+			margin-bottom: 20px;
+		}
+		li {
+			@media #{$desktop} {
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
+
+
+
+.woonverzekering {
+	&__intro {
+		@media #{$desktop} {
+			margin-bottom: 32px;
+		}
+
+	}
+	&__cta {
+		@media #{$desktop} {
+			margin-top: 12px;
+		}
+	}
+}

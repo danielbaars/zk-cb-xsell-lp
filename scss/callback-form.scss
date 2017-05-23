@@ -1,0 +1,106 @@
+@import "fonts";
+
+@import "bootstrap-callback-form";
+
+@import "colors";
+
+@import "misc-variables";
+
+@import "mixins";
+
+@import "../bourbon/bourbon";
+
+body,
+input,
+button {
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+body {
+	font-family: $font-family-base;
+	font-size: $font-size-base;
+	line-height: $line-height-base;
+	color: $text-color;
+	background-color: $body-bg;
+}
+
+a {
+	color: $zk-blauw;
+}
+
+h1, h2, h3, h4 {
+	font-family: $font-family-headers;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.tblock__subheader {
+	font-size: 20px;
+	color: $zk-blauw;
+	padding-bottom: 8px;
+}
+
+.xsell-button {
+	@include xsell-button;
+}
+
+.xsell-button--white-bg {
+	@include xsell-button--white-bg;
+}
+
+
+/* NOW INTERACT CALLBACK FORM */
+
+#callback-form {
+	.tblock__subheader {
+		margin-bottom: 4px;
+		text-align: center;
+	}
+}
+
+.callback-inputField {
+	border-radius: 4px;
+	background-color: tint($cb-groen, 91%);
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+#lnksend {
+	width: 100%;
+}
+
+.terugbellen__bedankt {
+	margin-top: 15px;
+	background-color: #d7eff0;
+	border-radius: 4px;
+	border: 1px solid shade($zk-lichtgroenblauw, 5%);
+	padding: 16px;
+	text-align: center;
+}
+
+.terugbellen__bedankt__header {
+	font-size: 24px;
+	line-height: 1.1;
+	margin-top: -2px;
+	color: $zk-blauw;
+	margin-bottom: 6px;
+	.vinkje {
+		display: inline-block;
+		width: 20px;
+		height: 22px;
+		background-image: url('../img/zk-vinkje-cb-groen-90x90px.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: 0 2px;
+		margin-right: 2px;
+	}
+}
+
+.terugbellen__bedankt__text {
+	margin-bottom: 0;
+	@media (min-width: 992px) {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}

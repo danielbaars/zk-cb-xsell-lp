@@ -1,0 +1,324 @@
+/* ! FUNCTIONS */
+
+@function clamp($value, $min, $max) {
+  @return if($value > $max, $max, if($value < $min, $min, $value));
+}
+
+
+/* ! GENERAL */
+
+@mixin font-awesome {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin remove-list-styling {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	li {
+		list-style: none;
+	}
+}
+
+@mixin horizontal-list($padding: 10px) {
+	padding-left: 0;
+	list-style: none;
+	> li {
+		display: inline-block;
+		padding-right: $padding;
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+}
+
+@mixin bg-size ($new-width, $width, $height) {
+	background-size: $new-width floor(($new-width * ($height/$width)));
+}
+
+@mixin bg-size-by-height ($new-height, $width, $height) {
+	background-size: floor(($width * ($new-height/$height))) $new-height;
+}
+
+@mixin padding ($padding: $padding-base, $right: 0px, $top: 0px, $bottom: 0px) {
+	padding-left: $padding;
+	padding-right: $padding + $right;
+	padding-top: $padding + $top;
+	padding-bottom: $padding + $bottom;
+}
+
+@mixin vertical-padding ($padding: $padding-base, $multiplier: 1) {
+	padding-top: $padding;
+	padding-bottom: $padding * $multiplier;
+}
+
+@mixin horizontal-padding ($padding: $padding-base) {
+	padding-left: $padding;
+	padding-right: $padding;
+}
+
+@mixin container($new-height, $height, $width) {
+	width: floor($new-height * ($height/$width));
+	height: $new-height;
+	img {
+		width: 100%;
+	}
+}
+
+@mixin row-padding {
+	margin-bottom: 18px;
+	@media #{$tablet} {
+		margin-bottom: 24px;
+	}
+	@media #{$desktop} {
+		margin-bottom: 30px;
+	}
+}
+
+@mixin fa-list($icon-code, $size: 0.8, $color: inherit) {
+	margin: 0;
+	padding: 0;
+	li {
+		list-style-type: none;
+		position: relative;
+		padding-left: 22px * $size;
+		padding-bottom: 4px;
+		&:before {
+			font-family: FontAwesome;
+			content: $icon-code;
+			font-style: normal;
+			font-weight: normal;
+			line-height: 1;
+			display: inline-block;
+			vertical-align: middle;
+			font-size: $size * 1em;
+			position: absolute;
+			left: -1px * $size;
+			top: 5px / $size;
+			color: $color;
+		}
+	}
+}
+
+@mixin block-center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@mixin block-center-reset {
+	max-width: none;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+
+/* ! SPECIFIC */
+
+@mixin cb-panel {
+	@include padding(15px,0,-3px,0);
+	border-radius: 6px;
+	background-color: $cb-groen;
+	color: white;
+	a {
+		color: white;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+@mixin panel-cb-groen {
+	background-color: $cb-groen;
+	&, a {
+		color: white;
+	}
+}
+
+@mixin panel-padding--product {
+	@include padding(15px);
+}
+
+@mixin panel-padding--small {
+	@include padding(15px);
+}
+
+@mixin panel-padding--large {
+	padding: 20px;
+	@media #{$tablet-small} {
+		padding: 26px;
+	}
+}
+
+@mixin zk-panel {
+	border-radius: $border-radius-base;
+	background-color: white;
+	border: 1px solid $zk-lichtgroenblauw;
+}
+
+@mixin zk-vinkjes-list {
+	margin: 0;
+	padding: 0;
+	li {
+		list-style-type: none;
+		position: relative;
+		padding-left: 20px;
+		padding-bottom: 4px;
+		&:before {
+			font-family: "zk-icons-font";
+			content: "\0067";
+			font-style: normal;
+			font-weight: normal;
+			line-height: 1;
+			display: inline-block;
+			vertical-align: middle;
+			font-size: 2rem;
+			position: absolute;
+			left: -3px;
+			top: 3px;
+		}
+	}
+}
+
+@mixin xsell-button {
+	text-decoration: none;
+	position: relative;
+	outline: 0;
+	display: inline-block;
+	white-space: nowrap;
+	padding: 1px 10px 1px 10px;
+	margin-bottom: 0;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	border-radius: 4px;
+	color: white;
+	border-style: solid;
+	border-width: 0 0 2px 0;
+	font-size: 19px;
+	line-height: 1.6;
+	font-family: $font-family-headers;
+	font-weight: $semi-bold;
+	&:hover,
+	&:focus {
+		text-decoration: none;
+		color: white;
+		outline: none;
+	}
+}
+
+@mixin xsell-button-v2 {
+	text-decoration: none;
+	position: relative;
+	outline: 0;
+	display: inline-block;
+	white-space: normal;
+	padding: 6px 10px 6px 10px;
+	margin-bottom: 0;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	border-radius: 4px;
+	color: white;
+	border-style: solid;
+	border-width: 0 0 2px 0;
+	font-size: 19px;
+	line-height: 1.2;
+	font-family: $font-family-headers;
+	font-weight: $semi-bold;
+	&:hover,
+	&:focus {
+		text-decoration: none;
+		color: white;
+		outline: none;
+	}
+	&[data-icon]:after {
+		position: absolute;
+		right: 10px;
+		top: 12px;
+	}
+}
+
+@mixin xsell-button--two-lines {
+	&[data-icon]:after {
+		top: 23px;
+	}
+}
+
+@mixin xsell-button--white-bg {
+	background-color: $cb-groen;
+	border-color: shade($cb-groen, 30%);
+	&:hover {
+		background-color: tint($cb-groen, 10%);
+	}
+}
+
+@mixin xsell-button--green-bg {
+	background-color: $zk-blauw;
+	border-color: shade($zk-blauw, 30%);
+	&:hover {
+		background-color: tint($zk-blauw, 10%);
+	}
+}
+
+@mixin xsell-button--light {
+	color: $cb-groen;
+	background-color: $cb-lichtgroen;
+	border-color: shade($cb-lichtgroen, 30%);
+	&:hover {
+		background-color: tint($cb-lichtgroen, 30%);
+		color: $cb-groen;
+	}
+}
+
+@mixin shadow-bottom-border($border-color) {
+	border-style: solid;
+	border-width: 0 0 2px 0;
+	background-color: $border-color;
+	border-color: shade($border-color, 30%);
+	&:hover {
+		background-color: tint($border-color, 10%);
+	}
+}
+
+@mixin zk-hoekje {
+	width: 68px;
+	height: 68px;
+	border-top-right-radius: $border-radius-base;
+	background-size: contain;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+@mixin slanted-corner {
+    content: '';
+    transform: skewX(-12deg);
+    transform-origin: top;
+    -webkit-transform: skewX(-12deg);
+    -webkit-transform-origin: 0 0;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+}
+
+@mixin slanted-corner--one-line {
+	width: 15px;
+	height: 54px;
+}
+
+@mixin slanted-corner--two-lines {
+	width: 15px;
+	height: 56px;
+}
+
+@mixin slanted-corner--three-lines {
+	width: 30px;
+	height: 104px;
+}

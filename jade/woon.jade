@@ -1,0 +1,26 @@
+extends default
+block header
+	- var formType = 'woon';
+	- var animatedHeader = 'no';
+	- var pageTitle = 'XSell Single Product Template (Woonverzekering)';
+	- var bodyClass = 'spt woon';
+block content
+	include _header
+	.container
+		.row
+			.col-xs-12.col-md-8
+				.hero-carousel
+					img.carousel-img(src="img/zk-arts-kitter-visual-1268x571px.jpg")
+					h1.carousel-slogan Dezelfde zorg. Ook voor uw woning.
+			.col-xs-12.col-sm-6.col-sm-push-6.col-md-4.col-md-push-0
+				.main-widget.main-widget--auto.main-widget--korting.sm-2nd
+					.pblock__discount
+						.discount__text
+							.discount__1st 8%
+							.discount__2nd korting				
+					h2.mw__header Woonverzekering
+					h3.mw__form-header Vul uw adres in:
+					include _form--woon
+					.widget-footnote
+						p Als klant van Zilveren Kruis krijgt u 8%&nbsp;premiekorting. Krijgt u via uw werkgever meer collectiviteitsvoordeel? 
+							mixin collectiefOnClick('Lees meer')

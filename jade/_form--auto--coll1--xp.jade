@@ -1,0 +1,31 @@
+.pblock__discount
+	.discount__text
+		.discount__1st 8%
+		.discount__2nd korting				
+h2.mw__header.mw__header--xp Autoverzekering
+//-h3.mw__form-header Direct uw premie berekenen?
+form.spw__form.autoform(method="GET" action="#{autoLink}" name="autoFormulier")
+	.nummerbord
+		input(type="text" name="licensePlateInput" placeholder="Vul uw kenteken in")
+	.schadevrije-jaren.form-group
+		label Schadevrije jaren
+		input.form-control(type="text" name="schadevrijeJarenInput" placeholder="0")
+		.info-link: <i class="fa fa-info-circle fa-lg"></i> 
+			a(href="#") Hulp bij berekenen
+	.geboortedatum.form-group
+		label Geboortedatum
+		input.form-control(type="text" name="geboorteDatumInput" placeholder="dd-mm-jjjj")
+	.postcode.form-group
+		label Postcode
+		input.form-control(type="text" name="postcodeInput" placeholder="1234 AB")
+	.input-button-container.input-button-container--xp
+		input(type="submit" value="Ontdek Centraal Beheer")
+	.widget-footnote
+		h3.fn__header Meer korting via uw werkgever?
+		p Uw korting als klant van Zilveren Kruis is 8%. 
+			a.collectiviteitsvoordeel-link(href="#") Check hier of u recht heeft op nog meer collectiviteitsvoordeel.
+		.collectiviteit.form-group
+			//-label Zoek uw werkgever, vereniging of belangenorganisatie
+			input.form-control(type="text" name="collectiviteitInput" placeholder="Zoek uw werkgever, vereniging of belangenorganisatie")
+			<i class="fa fa-search fa-lg"></i> 
+		.info-link.info-link--collectiviteit: <i class="fa fa-info-circle fa-lg"></i> 	

@@ -1,0 +1,26 @@
+extends _woon-micro-q2
+
+prepend header
+	- var pageTitle = 'Centraal Beheer Kostbaarheden Buitenshuisverzekering'
+	- var fileName = 'woon-micro-q2-pensionados'
+	- var bodyClass = 'woon-micro-q2 ' + fileName
+	- var pageID = fileName
+	- var dataCre = 'wonen-mic-pe'
+
+prepend content
+	- var payOff = 'Echt genieten? Alleen als ik me geen zorgen hoef te maken over mijn spullen.'
+	- var widgetHeaderAlt = 'Verzeker uw waardevolle spullen als u ze mee naar buiten neemt.'
+	- var introText = 'Gaat u regelmatig de deur uit? Dan wilt u zich geen zorgen maken om uw camera of mobiele telefoon. U moet er niet aan denken dat uw waardevolle spullen kapot gaan. Of gestolen worden. Bij onze partner Centraal Beheer zijn deze spullen goed verzekerd. Net als u dat bent bij Zilveren Kruis.'
+	include _woon-micro-q2-variables
+	- var verzekeringCode = 'kbh'
+	- var verzekeringNaam = kbhNaam
+	- var usp1 = kbhUSP1
+	- var usp2 = kbhUSP2
+	- var usp3 = kbhUSP3
+	- var uspFootnote = true	
+	- var secondaryVisual = 'woon-micro-pensionados-extra-visual.jpg'
+	- var sloganText = 'Dezelfde zorg. <br>Ook voor uw waardevolle spullen buitenshuis.'
+
+append content	
+	script.
+		var data_kostbaarheden = "true";	

@@ -1,0 +1,112 @@
+include _auto-widget
+
+extends default
+block header
+	- var autoQ3 = true
+	- var synovite = true
+	- var synoviteCode = dataCre
+	- var ssmDisabled = true
+	- var getParamsDisabled = true
+	- var toolTipsterDisabled = true
+	- var modernizr = false
+	- var dataPla = 'zka'
+	- var dataPro = 'cross'
+	- var dataType = 'referrer'
+	- var dataWerkgevernr = '49545'
+	- var dataCid = dataPro
+block content
+	- var discountPercentage = 8
+	- var CTA = 'Check uw voordeel <br>bij Centraal Beheer'
+	- var phoneNumber = '055 - 579 83 07'
+	.page-wrapper
+		include _header-v2
+		.outer-hero
+			.container
+				.row
+					.col-xs-12
+						.hero
+							.row
+								.col-sm-9.col-md-8
+									h1.payoff.hidden-xs-ts &ldquo;!{payOff}&rdquo;
+								.col-sm-3.col-md-4
+									//-.korting-badge.imgc: img(src="img/xsell-korting-octagon-violet.png")
+		.outer-payoff--mobile.hidden-sm-lg
+			.container
+				.row
+					.col-xs-12
+						h1.payoff--mobile &ldquo;!{payOff}&rdquo;
+		.outer-intro
+			.container
+				.row
+					.col-xs-12.col-sm-7.col-md-8.col-md-push-2
+						.intro #{introText}
+					.col-xs-12.col-sm-5.col-md-4
+						+main-widget('', 'autoFormulier')
+		.outer-info
+			.container
+				.row
+					.col-xs-12.col-ts-6.col-sm-7.col-md-8
+						.info
+							h2.info__header Voordelen van de !{verzekeringNaam.replace(/&shy;/g, '')}
+							.info__visual-usp-container
+								.info__visual.imgc.hidden-xs-sm
+									//-img(src='img/#{secondaryVisual}')
+								.info__text
+									ul.info__usp-list
+										li #[i.zki.zki-checkmark] !{usp1}
+										li #[i.zki.zki-checkmark] !{usp2}
+										li #[i.zki.zki-checkmark] !{usp3}
+										if uspFootnote
+											p.info__footnote Wilt u precies weten wat wel en niet is verzekerd? Lees het in de #[a(href="#{productInformatieLinkAuto}" data-cre='#{dataCre}') Productinformatie en de Polisvoorwaarden].
+									a.info__cta.xsell-button.xsell-button--white-bg(href="#{autoLink}" data-icon="a" data-cre='#{dataCre}') Bereken uw premie
+					.col-xs-12.col-ts-6.col-sm-5.col-md-4
+						.contact
+							h2.contact__header Even Apeldoorn bellen
+							p.contact__intro Wilt u meer weten over deze verzekering? Bij Centraal Beheer helpen ze u graag. En als u wilt, bellen ze u terug op een moment dat het u uitkomt.
+							a.contact__phonebutton.xsell-button.xsell-button--green-bg(title="E-mail" data-icon="a" href="tel:#{phoneNumber}") #{phoneNumber}
+							.contact__phonenumber #{phoneNumber}
+							.contact__footer
+								//-.contact__email
+									#[i.fa.fa-envelope-o] #[a(href="#{emailLink}" data-cre='#{dataCre}-email') Stel uw vraag via e-mail]
+								.contact__callback
+									#[i.fa.fa-phone] #[a(href="#{terugbelLink}" data-cre='#{dataCre}-terugbellen') Centraal Beheer belt u terug]
+			.outer-slogan
+				.container
+					.row
+						.col-xs-12
+							.slogan !{sloganText}
+			.container
+				.row
+					.col-xs-12
+						.autoverzekering
+							h2.autoverzekering__header Autoverzekering met #[br]!{verzekeringNaam.replace(/&shy;/g, '')}
+							.row
+								.col-xs-12.col-ts-6
+									.autoverzekering__text
+										p.autoverzekering__intro De Schadeverzekering inzittenden sluit u altijd af in combinatie met de Autoverzekering. Bij Centraal Beheer kunt u kiezen uit de WA, WA+ en de Allrisk Autoverzekering. U ontvangt #[strong minimaal 8% korting] op de premie van de Autoverzekering. 
+										p.autoverzekering__intro Bij het afsluiten van de Schadeverzekering inzittenden krijgt u altijd #[strong €&nbsp;5,- korting op de premie]. Dit geldt ook voor de andere aanvullende dekkingen:
+								.col-xs-12.col-ts-6
+										ul.autoverzekering__list
+											li #[span No-claimbeschermer] - Lage premie door vaste no&#8209;claimkorting.  Alleen in combinatie met de Autoverzekering.
+											li #[span Hulpverlening buitenland] - Meteen hulp bij autopech in Europa. Dag en nacht.
+											li #[span Rechtsbijstand Verkeer en medisch] - Juridische hulp voor het hele gezin bij een auto-ongeluk.
+											li #[span Pechhulp Nederland] - 24/7 verzekerd voor hulp bij autopech.
+							.row
+								.col-xs-12.col-ts-6
+									a.autoverzekering__cta.xsell-button.xsell-button--white-bg(href="#{autoLink}" data-icon="a" data-cre='#{dataCre}') Zelf samenstellen
+		.outer-links
+			.container
+				.row
+					.col-xs-12
+						.links
+							ul
+								li: a(href="#{wijzerLink}" data-cre='#{dataCre}') Wijzer in geldzaken
+								li: a(href="#{productInformatieLinkAuto}" data-cre='#{dataCre}') Productinformatie &amp; Polisvoorwaarden
+		include _footer-v2						
+	script.
+		var data_cre = "#{dataCre}";
+		var data_pla = "#{dataPla}";
+		var data_type = "#{dataType}";
+		var data_werkgevernr = "#{dataWerkgevernr}";
+		var data_wgid = "#{dataWerkgevernr}";
+		var data_cid = "#{dataCid}";

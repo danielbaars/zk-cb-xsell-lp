@@ -1,0 +1,17 @@
+mixin main-widget(widgetClassName, widgetFormName)
+	.widget.widget--car(class='#{widgetClassName}')
+		//-.widget__discount
+			.discount__text
+				.discount__1st #{discountPercentage}%
+				.discount__2nd korting		
+		h2.widget__header.widget__header--ov Autoverzekering
+		h2.widget__header.widget__header--alt !{widgetHeaderAlt}
+		form.widget__form.widget__form--address.form-inline(action='#{autoLink}' method='GET' name='#{widgetFormName}')
+			//-input(type="hidden" name="stap" value="Stap-2")
+			.form__primary.form__address-inputs
+				.form-group.form__license-plate
+					input(type="text" name="licensePlateInput" placeholder="Vul uw kenteken in")
+			.form__submit
+				button.widget__button(type='submit' href='#{autoLink}' data-icon="a") !{CTA}
+		.widget__footer
+			p U ontvangt altijd korting!

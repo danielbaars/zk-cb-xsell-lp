@@ -1,0 +1,26 @@
+extends _woon-micro-q2
+
+prepend header
+	- var pageTitle = 'Centraal Beheer All Risks Woonverzekering'
+	- var fileName = 'woon-micro-q2-kinderen'
+	- var bodyClass = 'woon-micro-q2 ' + fileName
+	- var pageID = fileName
+	- var dataCre = 'wonen-mic-k'
+
+prepend content
+	- var payOff = 'Waardevolle spullen? Daar heeft die kleine echt geen boodschap aan.'
+	- var widgetHeaderAlt = 'Verzeker uw inboedel en huis. Ook bij schade door eigen schuld.'
+	- var introText = 'Een glas limonade over uw laptop? Een viltstift-tekening op uw bankstel? Of een verbrijzeld tabletscherm? Bij onze partner Centraal Beheer is uw inboedel goed verzekerd. Net zoals uw gezin dat is bij Zilveren Kruis. Vaak ook als uw spullen door eigen schuld beschadigd raken.'
+	include _woon-micro-q2-variables
+	- var verzekeringCode = 'arw'
+	- var verzekeringNaam = arwNaam
+	- var usp1 = arwUSP1
+	- var usp2 = arwUSP2
+	- var usp3 = arwUSP3
+	- var secondaryVisual = 'woon-micro-kinderen-extra-visual.jpg'
+	- var sloganText = 'Dezelfde zorg. <br>Ook bij schade door eigen schuld.'
+
+append content	
+	script.
+		var data_inboedel = "true";
+		var data_allrisk = "true";	

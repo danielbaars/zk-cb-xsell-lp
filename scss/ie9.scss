@@ -1,0 +1,15 @@
+@import "../bower_components/bootstrap-sass-twbs/assets/stylesheets/bootstrap/variables";
+
+@import "bootstrap-grid-extra-variables.scss";
+
+.woon-massa-q2-b {
+
+	@media #{$desktop} {
+		.dekking--1,
+		.dekking--2,
+		.dekking--3 {
+			height: 263px !important;
+		}
+	}
+
+}

@@ -1,0 +1,113 @@
+mixin main-widget(jsId, className, formName)
+	.main-widget.main-widget--woon.main-widget--korting.pop-out-widget(data-widget='woonWidget' style='' class='#{className}')
+		.inner-widget-container
+			.main-widget.main-widget--woon.main-widget--korting
+				//-.pblock__discount
+					.discount__text
+						.discount__1st 8%
+						.discount__2nd korting
+				h2.mw__header.text-center Woonverzekering
+				h3.mw__form-header Direct uw premie berekenen?
+				form#house-insurance-form.spw__form.spw__form--adres.form-inline.jsWoonForm(action='https://www.collectief-cba.nl/WoonVerzekering/Stap1/?wgid=49545' method='GET' name='#{formName}-a' data-cre='#{dataCre}' class='#{jsId}')
+					.form__adres-inputs
+						.form-group.form-group--postcode
+							label Postcode
+							input#postcode.form-control.widget-postcode(name='postcode', placeholder='1111AA', type='text', maxlength='6')
+						.form-group.form-group--huisnummer
+							label Huisnr.
+							input#huisnummer.form-control.widget-huisnummer(name='huisnummer', placeholder='4', type='text')
+						.form-group.form-group--toevoeging
+							label Toevoeging
+							input#toevoeging.form-control.widget-toevoeging(name='toevoeging', placeholder='bis', type='text')
+					.house-insurance-inputs
+						.form-group.form-group--housetypes
+							label.break Wat voor type woning heeft u?
+							select#housetype.form-control.widget-housetype(name='housetype')
+								option(value='') Maak uw keuze
+								option(value='1') Tussenwoning
+								option(value='2') Flat/ Appartement/Etage/Maisonette
+								option(value='3') Vrijstaand/Bungalow/Herenhuis/Woonboerderij
+								option(value='4') Twee-onder-een-kap/Hoekwoning
+								option(value='5') Kamerbewoning
+								option(value='6') Recreatiewoning/Stacaravan
+								option(value='7') Grachtenpand
+								option(value='8') Woonboot
+								option(value='9') Geen van bovengenoemde
+							a#tooltip_housetype.tooltipstered.tooltip-housetype(data-tooltip='Staat uw woningtype niet in ons overzicht? Neem dan contact op met een van onze medewerkers via telefoonnummer (055) 579 8000. Wij helpen u dan bij het berekenen van de premie.')
+								img(src='img/document-info.png')
+						.form-group.form-group--houserooms
+							label.break Hoeveel slaap en werkkamers heeft uw woning?
+							select#houserooms.form-control.widget-kamers(name='houserooms')
+								option(value='') Maak uw keuze
+								option(value='1') 1
+								option(value='2') 2
+								option(value='3') 3
+								option(value='4') 4
+								option(value='5') 5
+								option(value='6') 6
+								option(value='7') 7
+								option(value='8') 8
+								option(value='9') 9
+								option(value='10') 10
+								option(value='11') 11
+								option(value='12') 12
+								option(value='13') 13
+								option(value='14') 14
+								option(value='15') 15
+								option(value='16') 16
+								option(value='17') 17
+								option(value='18') 18
+								option(value='19') 19
+								option(value='20') 20
+							a#tooltip_houserooms.tooltipstered.tooltip-houserooms(data-tooltip='Voor het invullen van het aantal kamers tellen niet mee; woonkamer, badkamer, gang, keuken en garage. Wordt de zolder gebruikt als slaap/hobbyruimte moet u deze wel meerekenen. Heeft u een vliering of bergruimte dan telt dit niet als een kamer.')
+								img(src='img/document-info.png')
+						.form-group.rooftoptype
+							label.break Wat voor dakbedekking heeft uw woning?
+							#rooftype.form-control-radiobutton
+								input(name='rooftype', type='radio', value='rietenDak')
+								|  Rieten dak 
+								input(name='rooftype', type='radio', value='anders')
+								|  Anders
+						.form-group.isowner
+							label Ben u eigenaar?
+							#houseowner.form-control-radiobutton
+								input(name='houseowner', type='radio', value='Ja')
+								|  Ja 
+								input(name='houseowner', type='radio', value='Nee')
+								|  Nee
+						.form-group.birthdate
+							label Wat is uw geboortedatum?
+							input#birthdate.form-control.widget-geboortedatum(name='birthdate', placeholder='DD-MM-YYYY', type='text')
+						.input-button-container
+							input#submit_woon_form.jsSubmitWoonForm(type='submit', value='Bereken uw premie', href='https://www.centraalbeheer.nl/verzekeringen/woonverzekering/premie-berekenen/Paginas/stap-1.aspx', alt='#{CTA}')
+					#widget-error-container.widget-error-container(style='display:none')
+						.error-logo  
+						.error-message
+							p Uw aanvraag is niet compleet. #[br]Een aantal verplichte velden is nog niet ingevuld
+							ul#error-message-list.error-message-list
+					.widget-footnote.widget-footnote--xp
+						p.footer-text Als klant van Zilveren Kruis krijgt u 8% premiekorting. Krijgt u via uw werkgever meer collectiviteitsvoordeel? 
+							a.lp-link(onclick="Link('#{collectiefLink}','cross','zka','#{dataCre}','referrer','49545');return false;" href="#{collectiefLink}") Lees meer
+		.main-widget--collapsed
+			//-.pblock__discount
+				.discount__text
+					.discount__1st 8%
+					.discount__2nd korting
+			h2.mw__header.text-center !{widgetHeader}
+			h3.mw__form-header Vul uw adres in:
+			form.spw__form.spw__form--adres.form-inline(action='https://www.centraalbeheer.nl/verzekeringen/woonverzekering/premie-berekenen/Paginas/stap-1.aspx?werkgevernr=49545' method='GET' name='#{formName}-b' data-cre='#{dataCre}' class='#{jsId}')
+				.form__adres-inputs.widget-opener.input-fields-container
+					.form-group.form-group--postcode
+						label Postcode
+						input.form-control(name='postcode', placeholder='1111AA', type='text', maxlength='6')
+					.form-group.form-group--huisnummer
+						label Huisnr.
+						input.form-control(name='huisnummer', placeholder='4', type='text')
+					.form-group.form-group--toevoeging
+						label Toevoeging
+						input.form-control(name='toevoeging', placeholder='bis', type='text')
+				.input-button-container
+					input(type='submit', value='#{CTA}', href='https://www.centraalbeheer.nl/verzekeringen/woonverzekering/premie-berekenen/Paginas/stap-2.aspx', alt='#{CTA}')
+			.widget-footnote.mw__footnote
+				p Als klant van Zilveren Kruis krijgt u 8% premiekorting. Krijgt u via uw werkgever meer collectiviteitsvoordeel? 
+					a.lp-link(onclick="Link('#{collectiefLink}','cross','zka','#{dataCre}-col','referrer','49545');return false;" href="#{collectiefLink}") Lees meer

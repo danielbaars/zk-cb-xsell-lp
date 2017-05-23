@@ -1,0 +1,16 @@
+doctype transitional
+html(xmlns='http://www.w3.org/1999/xhtml')
+	head
+		title
+		link(href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Titillium+Web:400,600,700' rel='stylesheet' type='text/css')
+		link(rel='stylesheet', type='text/css', href='css/callback-form.css', media='all')
+	body
+		form#Form1
+			#defaultbutt
+				#callback-form
+					h4.tblock__subheader Of laat u terugbellen:
+					input#phoneNumber.callback-inputField.form-control(type='text', name='phoneNumber', maxlength='11', placeholder='Uw telefoonnummer')
+					input#lnksend.button.xsell-button.xsell-button--white-bg.lp-link(type='submit', name='lnksend', value='Bel mij', disabled='disabled')
+				.terugbellen__bedankt(style="display: none;")
+					h3.terugbellen__bedankt__header #[.vinkje] Bedankt!
+					p.terugbellen__bedankt__text Wij bellen u zo spoedig mogelijk.						

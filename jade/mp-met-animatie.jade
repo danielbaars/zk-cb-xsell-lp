@@ -1,0 +1,180 @@
+extends default
+block header
+	- var formType = 'auto-woon';
+	- var animatedHeader = 'yes';	
+	- var pageTitle = 'XSell Multi-Product Template';
+	- var bodyClass = 'mpt';
+block content
+	include _header
+	.container
+		.row
+			.col-xs-12.col-md-8
+				.hero-carousel.carousel--animatie
+					include ../animaties/multi-animatie.html
+			.hidden-xs-ts.col-sm-6.col-sm-push-6.col-md-4.col-md-push-0
+				include _multi-product-widget
+			.col-xs-12.hidden-sm-lg
+				include _multi-product-widget--phone					
+			.col-xs-12.col-sm-6.col-sm-pull-6.col-md-4.col-md-pull-0
+				.text-block.tblock--intro.sm-2nd.md-2nd
+					h3.tblock__header Onze samenwerking. 
+						br
+						| Uw voordeel.
+					.tblock__text
+						p Als klant van Zilveren Kruis bent u vertrouwd met onze goede zorg. En bij onze partner Centraal Beheer krijgt u precies dezelfde kwaliteit en dezelfde service. Maar dan op het gebied van schadeverzekeringen. Maak kennis met Centraal Beheer. En ontdek hoeveel korting u krijgt als klant van Zilveren Kruis.
+			.col-xs-12.col-sm-6.col-md-4
+				.text-block.tblock--actie.sm-3rd.md-2nd
+					h3.tblock__header € 25,-  kortingsvoucher op Autoverzekering
+					.tblock__text
+						p Sluit nu online een Autoverzekering af bij Centraal Beheer Achmea en ontvang €&nbsp;25,-&nbsp;retour. 
+							mixin autoOnClick('Lees meer over de Autoverzekering')
+					.tblock--actie__img
+						img(src="img/fitbit-flex-710x318px.jpg" alt="Fitbit Flex")				
+					p.tblock__footnote
+						a(href="#") actievoorwaarden
+			.hidden-xs-ts.col-sm-6.col-md-4
+				include _contact-block
+	.container
+		.row
+			.col-xs-12
+				.row-header
+					h3 Dit zijn de verzekeringen van onze partner Centraal&nbsp;Beheer&nbsp;Achmea
+			.col-xs-12
+				.main-products-container
+					.row
+						.col-sm-6.col-md-4
+							.single-product.single-product--auto
+								.single-product-info.sm-4th.md-3rd
+									h3.pblock__name Auto
+									.pblock__discount
+										.discount__text
+											.discount__1st 8%
+											.discount__2nd korting
+									.sp__visual.sp__visual--auto
+										img(src="img/monteur-720x405px.jpg")
+									.pblock__info
+										p Schade is nooit leuk. Gelukkig krijgt u bij onze partner Centraal Beheer de eerste 3 jaar altijd de aanschafprijs vergoed bij total loss of diefstal. En dat geldt ook voor uw tweedehands auto.
+										p.more-link
+											a.lp-link(onclick="LinkExt('#{autoLPLink}','cross','zka','mp-lp-info-auto','referrer','49545');return false;" href="#{autoLPLink}" data-icon="a") Meer informatie
+								.single-product-widget.spw--auto.sm-5th.md-4th
+									h4.spw__title Bereken uw premie in 3 stappen
+									.spw__question Stap 1: Wat is uw kenteken?
+									include _form--auto
+						.col-sm-6.col-md-4
+							.single-product.single-product--woon
+								.single-product-info.sm-4th.md-3rd
+									h3.pblock__name Woon
+									.pblock__discount
+										.discount__text
+											.discount__1st 8%
+											.discount__2nd korting
+									.sp__visual.sp__visual--woon
+										img(src="img/kitter-720x405px.jpg")
+									.pblock__info
+										p Met de Woonverzekeringen van Centraal Beheer bepaalt u zelf wat u verzekert. Zoals uw spullen met een goede Inboedelverzekering en uw eigen woning met een Opstalverzekering.
+										p.more-link
+											a.lp-link(onclick="LinkExt('#{woonLPLink}','cross','zka','mp-lp-info-woon','referrer','49545');return false;" href="#{woonLPLink}" data-icon="a") Meer informatie
+								.single-product-widget.spw--woon.sm-5th.md-4th
+									h4.spw__title Direct uw premie berekenen?
+									include _form--woon
+						.col-sm-6.col-md-4									
+							.single-product.single-product--rechtsbijstand
+								.single-product-info.sm-6th.md-3rd
+									h3.pblock__name Rechtsbijstand
+									.sp__visual.sp__visual--rechtsbijstand
+										img(src="img/rechter-720x405px.jpg")
+									.pblock__info
+										p Door de Consumentenbond in mei 2014 als beste getest! Een Rechtsbijstandverzekering op maat. Waarbij u tot in de puntjes bepaalt wat u wel of niet wilt verzekeren. Zonder eigen risico.
+										p.more-link
+											a.lp-link(onclick="Link('#{rechtLPLink}','cross','zka','mp-lp-info-rbv','referrer','49545');return false;" href="#{rechtLPLink}" data-icon="a") Meer informatie
+								.single-product-widget.spw--rechtsbijstand.md-4th
+									h4.spw__title Even kennis maken met de Rechtsbijstandverzekering van Centraal Beheer
+									a.xsell-button.xsell-button--green-bg.lp-link(onclick="Link('#{rechtLink}','cross','zka','recht-widget-aug14','referrer','49545');return false;" href="#{rechtLink}" data-icon="a") Ontdek Centraal Beheer
+						.col-xs-12.hidden-ts-lg
+							.overige-verzekeringen
+								h3 Overige verzekeringen
+								a.xsell-button.xsell-button--white-bg.lp-link(onclick="Link('#{bootLPLink}','cross','zka','mp-lp-info-boot','referrer','49545');return false;" href="#{bootLPLink}" title="Bootverzekering" data-icon="a") Bootverzekering
+								a.xsell-button.xsell-button--white-bg.lp-link(onclick="Link('#{caravanLPLink}','cross','zka','mp-lp-info-caravan','referrer','49545');return false;" href="#{caravanLPLink}" title="Caravanverzekering" data-icon="a") Caravanverzekering
+								a.xsell-button.xsell-button--white-bg.lp-link(onclick="Link('#{camperLPLink}','cross','zka','mp-lp-info-camper','referrer','49545');return false;" href="#{camperLPLink}" title="Camperverzekering" data-icon="a") Camperverzekering
+								a.xsell-button.xsell-button--white-bg.lp-link(onclick="Link('#{motorLPLink}','cross','zka','mp-lp-info-motor','referrer','49545');return false;" href="#{motorLPLink}" title="Motorverzekering" data-icon="a") Motorverzekering
+						.hidden-xs-ts.col-sm-6.hidden-md-lg
+							.extra-blocks
+								include _collectiviteitskorting-block
+								include _independer-block										
+	.container
+		.row
+			.hidden-xs-ls.col-ts-12.col-sm-6.col-md-4
+				.product-block.pblock--long-tail.sm-8th.md-5th
+					h3.pblock__name Boot
+					h4.pblock__payoff Verzekerd in héél Europa
+					.pblock__info
+						ul
+							li Zowel boot, motor en trailer zijn verzekerd
+							li Ook scheepsuitrusting wordt vergoed
+							li Minimaal 5% klantkorting 
+					.pblock__buttons
+						.half.half--left
+							p.more-link
+								a.lp-link(onclick="Link('#{bootLPLink}','cross','zka','mp-lp-info-boot','referrer','49545');return false;" href="#{bootLPLink}" data-icon="a") Meer informatie
+						.half.half--right
+								a.xsell-button.xsell-button--white-bg.xsell-button--small.lp-link(onclick="Link('#{bootLink}','cross','zka','mp-lp-info-boot','referrer','49545');return false;" href="#{bootLink}" title="Vraag offerte aan") Vraag offerte aan
+			.hidden-xs-ls.col-ts-12.col-sm-6.col-md-4
+				.product-block.pblock--long-tail.sm-8th.md-5th
+					h3.pblock__name Caravan
+					h4.pblock__payoff Het hele jaar door verzekerd
+					.pblock__info
+						ul
+							li Onderweg, op de camping én in de stalling verzekerd
+							li Ook de spullen in de caravan zijn verzekerd
+							li Als klant krijgt u minimaal 5% korting
+					.pblock__buttons
+						.half.half--left
+							p.more-link
+								a.lp-link(onclick="Link('#{caravanLPLink}','cross','zka','mp-lp-info-caravan','referrer','49545');return false;" href="#{caravanLPLink}" data-icon="a") Meer informatie
+						.half.half--right
+								a.xsell-button.xsell-button--white-bg.xsell-button--small.lp-link(onclick="Link('#{caravanLink}','cross','zka','mp-lp-info-caravan','referrer','49545');" title="Bereken premie") Bereken premie	
+			.hidden-xs-ls.col-ts-12.col-sm-6.col-md-4
+				.product-block.pblock--long-tail.sm-9th.md-5th
+					h3.pblock__name Camper
+					h4.pblock__payoff Onbezorgd op vakantie
+					.pblock__info
+						ul
+							li Zelfs bij tweedehands campers wordt de eerste 3 jaar de aanschafprijs vergoed
+							li Ongestoord vakantie vieren omdat Centraal Beheer het regelt
+							li Klanten profiteren van minimaal 3,5% korting
+					.pblock__buttons
+						.half.half--left
+							p.more-link
+								a.lp-link(onclick="Link('#{camperLPLink}','cross','zka','mp-lp-info-camper','referrer','49545');return false;" href="#{camperLPLink}" data-icon="a") Meer informatie
+						.half.half--right
+								a.xsell-button.xsell-button--white-bg.xsell-button--small.lp-link(onclick="Link('#{camperLink}','cross','zka','mp-lp-info-camper','referrer','49545');return false;" href="#{camperLink}" title="Bereken premie") Bereken premie														
+			.hidden-xs-ls.col-ts-12.col-sm-6.col-md-4
+				.product-block.pblock--long-tail.sm-9th.md-6th
+					h3.pblock__name Motor
+					h4.pblock__payoff Vrijheid om zelf samen te stellen
+					.pblock__info
+						ul
+							li Bij total loss of diefstal aanschafprijs eerste 3 jaar altijd vergoed
+							li Motorkleding (ook van bijrijder) tot € 1.000,- verzekerd
+							li Als klant van Zilveren Kruis krijgt u minimaal 5% korting
+					.pblock__buttons
+						.half.half--left
+							p.more-link
+								a.lp-link(onclick="Link('#{motorLPLink}','cross','zka','mp-lp-info-motor','referrer','49545');return false;" href="#{motorLPLink}" data-icon="a") Meer informatie
+						.half.half--right
+								a.xsell-button.xsell-button--white-bg.xsell-button--small.lp-link(onclick="Link('#{motorLink}','cross','zka','mp-lp-info-motor','referrer','49545');return false;" href="#{motorLink}" title="Bereken premie") Bereken premie
+			.col-xs-12.hidden-sm.col-md-4
+				include _collectiviteitskorting-block
+			.col-xs-12.hidden-sm-lg
+				include _contact-block					
+			.col-xs-12.hidden-sm.col-md-4
+				include _independer-block
+	.container
+		.row
+			.hidden-xs-ls.col-ts-12
+				include _opzeghulp-block	
+	.container
+		.row
+			.hidden-xs-ls.col-ts-12
+				include _nuttig-block
+	include _footer

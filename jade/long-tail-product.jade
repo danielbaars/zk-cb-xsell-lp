@@ -1,0 +1,53 @@
+extends default
+block header
+	- var formType = 'geen';
+	- var animatedHeader = 'no';	
+	- var pageTitle = 'XSell Long-Tail Product Template';
+	- var bodyClass = 'ltpt';
+block content
+	include _header
+	.container
+		.row
+			.col-xs-12.col-md-8
+				.hero-carousel
+					img.carousel-img(src="img/zk-xsell-visual-boot-1268x571px.jpg")
+					h1.carousel-slogan Dezelfde zorg. Ook voor uw camper.
+			.col-xs-12.col-sm-6.col-sm-push-6.col-md-4.col-md-push-0
+				.main-widget.main-widget--boot.main-widget--korting.sm-2nd
+					.pblock__discount
+						.discount__text
+							.discount__1st 8%
+							.discount__2nd korting				
+					h2.mw__header De Bootverzekering
+					ul.usp
+						li Boot, motor en trailer verzekerd 
+						li Ook scheepsuitrusting wordt vergoed 
+						li Verzekerd tot 20% van de nieuwwaarde 
+					a.xsell-button.xsell-button--green-bg.lp-link(onclick="Link('#{bootLink}','cross','zka','woon-widget-aug14','referrer','49545');return false;" data-icon="a" href="#{bootLink}") Vraag offerte aan
+					.widget-footnote
+						p Als klant van Zilveren Kruis krijgt u minimaal 5%&nbsp;premiekorting. Krijgt u via uw werkgever meer collectiviteitsvoordeel? 
+							mixin collectiefOnClick('Lees meer')
+			section.primary-info
+				.col-xs-12.col-sm-6.col-sm-pull-6.col-md-4.col-md-pull-0
+					.text-block.tblock--intro.sm-2nd.md-2nd
+						h3.tblock__header Onze samenwerking. Uw voordeel.
+						.tblock__text
+							p Als klant van Zilveren Kruis bent u vertrouwd met onze goede zorg. Bij onze partner Centraal Beheer kunt u bij een Bootverzekering rekenen op precies dezelfde kwaliteit en dezelfde service. Maak kennis met Centraal Beheer. En ontdek hoeveel korting u krijgt als klant bij Zilveren Kruis.
+							p.more-link
+								a.lp-link(onclick="Link('#{multiLPLink}','cross','zka','xsell-info-aug14','referrer','49545');return false;" data-icon="a" href="#{multiLPLink}") Ontdek alle verzekeringen
+				.col-xs-12.col-sm-6.col-md-4
+					.text-block.sm-3rd.md-2nd
+						h3.tblock__header Uw vaartuig verzekerd in heel Europa				
+						.tblock__text
+							p U bent trots op uw vaartuig. Met de Bootverzekering verzekert u zich tegen schade aan uw boot, de motor, de trailer en de scheepsuitrusting. En bij een ongeluk zijn alle opvarenden automatisch meeverzekerd.
+				.col-xs-12.col-sm-6.col-md-4
+					include _contact-block	
+	.container
+		.row
+			.hidden-xs-ls.col-ts-12
+				include _opzeghulp-block							
+	.container
+		.row
+			.hidden-xs-ls.col-ts-12
+				include _nuttig-block
+	include _footer

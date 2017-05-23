@@ -1,0 +1,214 @@
+
+
+.outer-hero {
+	background-image: url(../img/orv-micro-q1-kinderen-main-visual-unmasked-1200x716px-q10.jpg);
+	@media #{$tablet-small} {
+		background-size: auto 450px;
+	}
+	@media #{$tablet} {
+		background-image: url(../img/orv-micro-q1-kinderen-main-visual-2160x926px-q10.jpg);
+	}
+	@media #{$desktop} {
+		background-size: auto 480px;
+	}
+}
+
+.intro {
+	@media #{$tablet} {
+		font-size: 18px;
+		text-align: center;
+	}
+	@media #{$desktop} {
+		font-size: 22px;
+	}
+}
+
+.payoff {
+	@media #{$tablet} {
+		margin-top: 16px;
+		font-size: 44px;
+	}
+	@media #{$desktop} {
+		margin-top: 50px;
+		font-size: 53px;
+	}
+}
+
+
+.info {
+
+	&__header {
+		text-align: center;
+		@media #{$tablet-small} {
+			text-align: left;
+		}
+		@media #{$tablet} {
+			font-size: 30px;
+			span {
+				white-space: nowrap;
+			}
+		}
+		@media #{$desktop} {
+			text-align: center;
+			padding-left: 80px;
+			padding-right: 80px;
+		}
+	}
+
+	&__visual {
+		width: 226px;
+		height: 205px;
+		background-image: url(../img/orv-micro-q1-kinderen-extra-visual-448x400px-q30.jpg);
+		background-size: auto 140%;
+		background-repeat: no-repeat;
+		background-position: 22% 27%;
+	}
+
+	&__text {
+		@media #{$tablet} {
+			width: 390px;
+		}
+	}
+
+	&__usp-list {
+
+		max-width: 384px;
+		margin-bottom: 20px;
+
+		li {
+			font-size: 17px;
+		}
+	}
+
+	&__cta {
+		@media #{$tablet-small} {
+			width: 180px;
+		}
+	}
+
+}
+
+
+.verzekering-intro {
+	font-family: $font-family-headers;
+	font-weight: $semi-bold;
+	font-size: 20px;
+	line-height: 1.6;
+	color: $zk-blauw;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+
+.verzekering {
+
+	margin-bottom: 20px;
+
+	@media #{$tablet-small} {
+		padding-bottom: 65px;
+		&--1,
+		&--2 {
+			height: 555px;
+			margin-bottom: 30px;
+		}
+		&--3,
+		&--4 {
+			height: 471px;
+		}
+	}
+
+	@media #{$tablet} {
+		&--1,
+		&--2 {
+			height: 457px;
+			margin-bottom: 30px;
+		}
+		&--3,
+		&--4 {
+			height: 417px;
+		}
+	}
+
+	@media #{$desktop} {
+		&--1,
+		&--2 {
+			height: 368px;
+			margin-bottom: 30px;
+		}
+		&--3,
+		&--4 {
+			height: 345px;
+		}
+	}
+
+
+
+	&__header {
+		text-align: left;
+		@media #{$tablet-small} {
+			text-align: center;
+			font-size: 20px;
+		}
+		@media #{$tablet} {
+			font-size: 26px;
+		}
+		@media #{$desktop} {
+			font-size: 24px;
+			text-align: left;
+			br {
+				display: none;
+			}
+		}
+	}
+
+	&__intro {
+		text-align: left;
+	}
+
+	&__cta {
+		margin-top: 20px;
+		@media #{$tablet-small} {
+			position: absolute;
+			width: 180px;
+			left: 24px;
+			bottom: 20px;
+		}
+	}
+}
+
+.fblock {
+
+	@media #{$desktop} {
+		height: 232px;
+	}
+
+	&__text {
+
+		&--discount-list {
+			@media #{$desktop} {
+				width: 100%;
+			}
+			.lp-link {
+				&--discount {
+					display: none;
+					@media #{$desktop} {
+						display: block;
+						float: right;
+					}
+				}
+				&--name {
+					@media #{$desktop} {
+						text-decoration: none;
+					}
+				}
+			}
+
+		}
+
+	}
+
+}
+
+#imp_norm {
+	display: none !important;
+}
